@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./modules/just.nix
     ./modules/kitty.nix
     ./modules/musicfox.nix
     ./modules/ssh.nix
