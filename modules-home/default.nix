@@ -14,7 +14,9 @@
   ]
   ++lib.optionals (builtins.elem "hyprland" opt-cfg.desktop) [
     ./desktop/hyprland.nix
+    ./modules/mako.nix
     ./modules/rofi.nix
+    ./modules/waybar.nix
   ];
   programs.home-manager.enable = true;
   home = {

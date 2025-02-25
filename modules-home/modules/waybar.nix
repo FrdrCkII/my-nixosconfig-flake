@@ -2,11 +2,11 @@
 
 {
   home.packages = with pkgs; [
-    swww
+    waybar
   ];
   home.file = {
-    ".config/hypr" = {
-      source = ../../config-dotfiles/${configname}/hypr;
+    ".config/waybar" = {
+      source = ../../config-dotfiles/${configname}/waybar;
       recursive = true;
     };
   };
