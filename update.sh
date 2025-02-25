@@ -1,3 +1,4 @@
+sudo nix flake update
 sudo rm -rf /etc/nixos/*
 sudo cp -r /home/FrdrCkII/.config/nixos/* /etc/nixos
 sudo rm -rf /etc/nixos/.git

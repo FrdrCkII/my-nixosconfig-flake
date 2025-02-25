@@ -40,16 +40,16 @@
     ...
   } @inputs: let
     system = "x86_64-linux";
-    pkg-settings = import ./config-hosts/pkgs.nix {
+    pkgs-conf = import ./config-hosts/pkgs.nix {
       inherit system;
       inherit nixpkgs;
       inherit nixpkgs-stable;
       inherit nur;
     };
     hosts-conf = import ./config-hosts {
-      inherit pkg-settings;
+      inherit pkgs-conf;
     };
-    system-gen = { host-conf }: with pkg-settings; nixpkgs.lib.nixosSystem {
+    system-gen = { host-conf }: with pkgs-conf; nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = {
         inherit inputs;

@@ -1,7 +1,5 @@
 {
-  config,
-  lib,
-  pkgs,
+  config, lib, pkgs,
   allowed-unfree-packages,
   allowed-insecure-packages,
   hostname,
@@ -19,8 +17,9 @@
     ./config/i18n.nix
     ./config/nix.nix
     ./desktop/xfce.nix
-    ./modules/caddy.nix
+    ./modules/nix-ld.nix
     ./modules/steam.nix
+    ./modules/steam-caddy.nix
   ]
   ++lib.optionals (builtins.elem "amd" opt-cfg.drivers) [
     ./drivers/amd.nix
@@ -43,6 +42,7 @@
     allowUnfreePredicate = allowed-unfree-packages;
     permittedInsecurePackages = allowed-insecure-packages;
   };
+  system.stateVersion = lib.mkDefault "25.05";
   users.users.root.hashedPassword = "${opt-cfg.rootpw}";
   users.users.${opt-cfg.username} = {
     isNormalUser = true;

@@ -19,6 +19,8 @@
     dates = "weekly";
     options = "--delete-older-than 1w";
   };
+  nix.optimise.automatic = lib.mkDefault true;
+  nix.optimise.dates = lib.mkDefault [ "03:45" ];
   boot.loader.systemd-boot.configurationLimit = lib.mkDefault 10;
   boot.loader.grub.configurationLimit = lib.mkDefault 10;
 }

@@ -13,7 +13,7 @@
         enable = true;
         device = lib.mkDefault "nodev";
         efiSupport = lib.mkDefault true;
-        gfxmodeEfi = lib.mkDefault "auto";
+        gfxmodeEfi = lib.mkDefault "1920x1080";
         configurationName = lib.mkDefault "NixOS";
       };
     };

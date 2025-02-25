@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, opt-cfg, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -11,13 +11,13 @@
       after = [ "network.target" ];
       description = "Steam & Github Reverse Proxy";
       serviceConfig = {
-        WorkingDirectory = "/home/FrdrCkII/tools/SteamDeck_302";
+        WorkingDirectory = "/home/${opt-cfg.username}/tools/SteamDeck_302";
         ExecStart = "${pkgs.caddy}/bin/caddy run --config steamcommunity_302.caddy.json --adapter caddyfile";
       };
     };
   };
   security.pki.certificateFiles = [
-    /home/FrdrCkII/tools/SteamDeck_302/steamcommunityCA.pem
+    /home/${opt-cfg.username}/tools/SteamDeck_302/steamcommunityCA.pem
   ];
   networking.extraHosts = ''
     127.0.0.1 steamcommunity.com
