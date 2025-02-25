@@ -50,14 +50,8 @@
     background-color: rgba(243, 139, 168, 0.2);
   }
   
-  #memory,
-  #custom-power,
-  #battery,
-  #backlight,
-  #wireplumber,
-  #network,
   #clock,
-  #taskbar,
+  #network,
   #pulseaudio,
   #tray {
     border-radius: 4px;
@@ -66,53 +60,11 @@
     background-color: rgba(30, 30, 46, 0.2);
     color: rgba(205, 214, 244, 0.8);
   }
-  
-  #custom-power {
-    margin-right: 1px;
-  }
-  
-  #custom-logo {
-    padding-right: 2px;
-    padding-left: 2px;
-    margin-left: 1px;
-    font-size: 10px;
-    border-radius: 4px 0px 0px 3px;
-    color: rgba(23, 147, 209, 0.8);
-  }
-  
-  #memory {
-    background-color: rgba(250, 179, 135, 0.2);
-  }
-  
-  #battery {
-    background-color: rgba(243, 139, 168, 0.2);
-  }
-  
-  #battery.warning,
-  #battery.critical,
-  #battery.urgent {
-    background-color: rgba(255, 0, 0, 0.2);
-    color: rgba(255, 255, 0, 0.8);
-  }
-  
-  #battery.charging {
-    background-color: rgba(166, 227, 161, 0.2);
-    color: rgba(24, 24, 37, 0.8);
-  }
-  
-  #backlight {
-    background-color: rgba(250, 179, 135, 0.2);
-  }
-  
-  #wireplumber {
-    background-color: rgba(249, 225, 175, 0.2);
-  }
-  
+
   #network {
     background-color: rgba(148, 226, 213, 0.2);
     padding-right: 12px;
   }
-
 
   #pulseaudio {
     background-color: rgba(149, 148, 226, 0.2);
@@ -124,11 +76,6 @@
     background-color: rgba(203, 166, 247, 0.2);
   }
   
-  #custom-power {
-    background-color: rgba(242, 205, 205, 0.2);
-  }
-  
-  
   tooltip {
     border-radius: 4px;
     padding: 10px;
@@ -139,8 +86,4 @@
     padding: 1px;
     background-color: rgba(19, 24, 34, 0.2);
   }
-  /* Footer
-  © 2025 GitHub, Inc.
-  Footer navigation
-  Terms */
   

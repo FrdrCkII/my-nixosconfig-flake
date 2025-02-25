@@ -26,7 +26,6 @@
       gimp
 
       microsoft-edge
-      vscode
       motrix
       
       wechat-uos

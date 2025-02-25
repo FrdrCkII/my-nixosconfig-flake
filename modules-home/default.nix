@@ -5,6 +5,7 @@
     ./modules/kitty.nix
     ./modules/musicfox.nix
     ./modules/ssh.nix
+    ./modules/vscode.nix
     ./modules/yazi.nix
     ./modules/zsh.nix
     ./packages.nix

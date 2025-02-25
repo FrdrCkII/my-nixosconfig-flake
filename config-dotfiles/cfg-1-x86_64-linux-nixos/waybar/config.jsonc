@@ -47,11 +47,6 @@
     },
     "max-length": 50
   },
-  "custom/wallpapers": {
-    "format": " ",
-    "tooltip": false,
-    "on-click": "bash $HOME/.config/waybar/scripts/wallpaper.sh"
-  },
 
   "tray": {
     "icon-size": 16,
