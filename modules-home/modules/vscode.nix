@@ -7,7 +7,6 @@
       ms-ceintl.vscode-language-pack-zh-hans
       github.vscode-pull-request-github
 
-      monokai.theme-monokai-pro-vscode
       illixion.vscode-vibrancy-continued
 
       jnoortheen.nix-ide
