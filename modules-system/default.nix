@@ -11,15 +11,14 @@
 {
   imports = [
     ../config-hosts/${configname}
-    ./packages.nix
     ./config/boot.nix
     ./config/hardware.nix
     ./config/i18n.nix
     ./config/nix.nix
-    ./desktop/xfce.nix
+    ./modules/caddy.nix
     ./modules/nix-ld.nix
     ./modules/steam.nix
-    ./modules/steam-caddy.nix
+    ./packages.nix
   ]
   ++lib.optionals (builtins.elem "amd" opt-cfg.drivers) [
     ./drivers/amd.nix

@@ -34,23 +34,6 @@
       "*": 6
     }       
   },
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "spacaing": 0,
-    "icon-size": 16,
-    "icon-theme": "Papirus",
-    "on-click-middle": "close",
-    "tooltip": true,
-    "tooltip-format": "{title}",
-    "max-length": 15,
-    "ignore-list":[
-      "rofi -  ",
-      "rofi -  ",
-      "rofi -  ",
-      "rofi -  ",
-      "rofi - dmenu"
-    ]
-  },
 
   "hyprland/window": {
     "format": "{}",

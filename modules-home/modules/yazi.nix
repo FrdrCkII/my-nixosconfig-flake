@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, configname, ... }:
 
 {
   home.packages = with pkgs; [
@@ -6,7 +6,7 @@
   ];
   # home.file = {
   #   ".config/yazi" = {
-  #     source = ./yazi;
+  #     source = ../../config-dotfiles/${configname}/yazi;
   #     recursive = true;
   #   };
   # };

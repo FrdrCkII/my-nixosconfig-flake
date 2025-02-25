@@ -2,19 +2,19 @@
 
 {
   imports = [
+    ./modules/kitty.nix
+    ./modules/musicfox.nix
+    ./modules/ssh.nix
+    ./modules/yazi.nix
+    ./modules/zsh.nix
     ./packages.nix
-    ./modules/ssh
-    ./modules/zsh
-    ./modules/yazi
-    ./modules/kitty
-    ./modules/musicfox
   ]
   ++lib.optionals (builtins.elem "kde" opt-cfg.desktop) [
-    ./desktop/kde
+    ./desktop/kde.nix
   ]
   ++lib.optionals (builtins.elem "hyprland" opt-cfg.desktop) [
-    ./desktop/hyprland
-    ./modules/rofi
+    ./desktop/hyprland.nix
+    ./modules/rofi.nix
   ];
   programs.home-manager.enable = true;
   home = {
