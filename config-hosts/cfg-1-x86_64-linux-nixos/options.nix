@@ -15,11 +15,13 @@
       "hyprland"
     ];
 
+    SystemVersion = "25.05";
     SystemPackages = with pkgs; [
       btrfs-assistant
       p7zip-rar
       fastfetch
     ];
+    HomeManagerVersion = "25.05";
     HomePackages = with pkgs; [
       libreoffice
       ffmpeg

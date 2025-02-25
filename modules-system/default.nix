@@ -35,17 +35,17 @@
   ++lib.optionals (builtins.elem "xfce" opt-cfg.desktop) [
     ./desktop/xfce.nix
   ];
-  networking.hostName = "${hostname}";
+  networking.hostName = hostname;
   networking.networkmanager.enable = true;
   nixpkgs.config = {
     allowUnfreePredicate = allowed-unfree-packages;
     permittedInsecurePackages = allowed-insecure-packages;
   };
-  system.stateVersion = lib.mkDefault "25.05";
-  users.users.root.hashedPassword = "${opt-cfg.rootpw}";
+  system.stateVersion = opt-cfg.SystemVersion;
+  users.users.root.hashedPassword = opt-cfg.rootpw;
   users.users.${opt-cfg.username} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
-    hashedPassword = "${opt-cfg.userpw}";
+    hashedPassword = opt-cfg.userpw;
   };
 }

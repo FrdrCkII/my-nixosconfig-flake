@@ -24,14 +24,14 @@
   ];
   programs.home-manager.enable = true;
   home = {
-    username = "${opt-cfg.username}";
-    homeDirectory = "/home/${opt-cfg.username}";
-    stateVersion = "25.05";
+    username = opt-cfg.username;
+    homeDirectory = "/home/${opt-cfg.username}/";
+    stateVersion = opt-cfg.HomeManagerVersion;
   };
   programs.git = {
     enable = true;
-    userName = "${opt-cfg.gitname}";
-    userEmail = "${opt-cfg.gitmail}";
+    userName = opt-cfg.gitname;
+    userEmail = opt-cfg.gitmail;
     signing.format = "ssh";
   };
 }
