@@ -15,5 +15,7 @@
     };
   };
   environment.xfce.excludePackages = with pkgs.xfce; [
+    xfce4-terminal
+    mousepad
   ];
 }
