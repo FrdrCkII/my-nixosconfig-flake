@@ -5,7 +5,7 @@
     enable = true;
     enable32Bit = true;
   };
-  hardware.pulseaudio = {
+  services.pipewire = {
     enable = true;
   };
 }

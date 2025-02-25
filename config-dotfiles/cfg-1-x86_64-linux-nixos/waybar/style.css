@@ -112,6 +112,12 @@
     background-color: rgba(148, 226, 213, 0.2);
     padding-right: 12px;
   }
+
+
+  #pulseaudio {
+    background-color: rgba(149, 148, 226, 0.2);
+    padding-right: 12px;
+  }
   
   #clock {
     font-family: JetBrainsMono Nerd Font;
