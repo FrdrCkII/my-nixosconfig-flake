@@ -12,6 +12,7 @@
     ];
     desktop = [
       "xfce"
+      "hyprland"
     ];
 
     SystemPackages = with pkgs; [
