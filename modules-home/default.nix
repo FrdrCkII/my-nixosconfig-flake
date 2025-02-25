@@ -25,7 +25,7 @@
   programs.home-manager.enable = true;
   home = {
     username = opt-cfg.username;
-    homeDirectory = "/home/${opt-cfg.username}/";
+    homeDirectory = "/home/${opt-cfg.username}";
     stateVersion = opt-cfg.HomeManagerVersion;
   };
   programs.git = {
