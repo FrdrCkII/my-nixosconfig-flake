@@ -5,11 +5,11 @@ cl:
 
 cp:
     sudo rm -rf /etc/nixos/*
-    sudo cp -r ~/.config/nixos/* /etc/nixos
+    sudo cp -r ./* /etc/nixos
     sudo rm -rf /etc/nixos/.git
 
 up:
     sudo nix flake update
 
 bd:
-    sudo nixos-rebuild switch --impure --flake ~/.config/nixos#c2h5oc2h4
+    sudo nixos-rebuild switch --impure --flake .#c2h5oc2h4
