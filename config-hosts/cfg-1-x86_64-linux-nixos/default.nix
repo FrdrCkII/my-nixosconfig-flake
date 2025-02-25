@@ -12,6 +12,7 @@
   system.stateVersion = "25.05";
   system.autoUpgrade.channel = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable";
   boot.kernelPackages = pkgs.linuxPackages_zen;
+  programs.zsh.enable = true;
   users.users.${opt-cfg.username} = {
     shell = pkgs.zsh;
   };
