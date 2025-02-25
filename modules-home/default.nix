@@ -10,14 +10,17 @@
     ./modules/zsh.nix
     ./packages.nix
   ]
-  ++lib.optionals (builtins.elem "kde" opt-cfg.desktop) [
-    ./desktop/kde.nix
-  ]
   ++lib.optionals (builtins.elem "hyprland" opt-cfg.desktop) [
     ./desktop/hyprland.nix
     ./modules/mako.nix
     ./modules/rofi.nix
     ./modules/waybar.nix
+  ]
+  ++lib.optionals (builtins.elem "kde" opt-cfg.desktop) [
+    ./desktop/kde.nix
+  ]
+  ++lib.optionals (builtins.elem "xfce" opt-cfg.desktop) [
+    ./desktop/xfce.nix
   ];
   programs.home-manager.enable = true;
   home = {
