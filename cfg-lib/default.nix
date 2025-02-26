@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, cfg, ... }:
 
 {
   nixosSystem = import ./nixosSystem.nix;

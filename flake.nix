@@ -44,35 +44,18 @@
     home-manager,
     ...
   } @inputs: let
-    cfg-host = import ./cfg-host {
+    cfg = import ./cfg-host {
       inherit nixpkgs;
       inherit nixpkgs-stable;
       inherit nur;
     };
-    system-gen = { cfg-host }:let
-      system = cfg-host.system;
-      cfg = cfg-host;
-      specialArgs = {
-        inherit inputs cfg;
-      };
-    in nixpkgs.lib.nixosSystem {
-      inherit system specialArgs;
-      modules = 
-        cfg.mod.nixos-modules
-        ++ [
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "home-manager.backup";
-            home-manager.extraSpecialArgs = specialArgs;
-            home-manager.users."${cfg.opt.username}".imports = cfg.mod.home-modules;
-          }
-        ];
-    };
+    system-gen = (import ./cfg-lib {
+      inherit lib cfg;
+    }).nixosSystem;
   in {
     nixosConfigurations = with cfg-host; {
-      "${test.hostname}" = system-gen { cfg-host = test; };
-      "${MyNixOSPC.hostname}" = system-gen { cfg-host = MyNixOSPC; };
+      "${test.hostname}" = system-gen { cfg = test; };
+      "${MyNixOSPC.hostname}" = system-gen { cfg = MyNixOSPC; };
     };
   };
 }
