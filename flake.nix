@@ -59,7 +59,7 @@
       inherit system specialArgs;
       modules = 
         cfg.mod.nixos-modules
-        ++ ( lib.optionals ( ( lib.lists.length cfg.mod.home-modules ) > 0 ) [
+        ++ [
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -67,7 +67,7 @@
             home-manager.extraSpecialArgs = specialArgs;
             home-manager.users."${cfg.opt.username}".imports = cfg.mod.home-modules;
           }
-        ]);
+        ];
     };
   in {
     nixosConfigurations = with cfg-host; {
