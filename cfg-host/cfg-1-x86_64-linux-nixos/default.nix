@@ -19,6 +19,7 @@
     #   "mod-home/modules/zsh.nix"
     # ];
     nixos-modules = [
+      ./system
       ../../mod-system
       ../../mod-system/modules/caddy.nix
       ../../mod-system/modules/nix-ld.nix
