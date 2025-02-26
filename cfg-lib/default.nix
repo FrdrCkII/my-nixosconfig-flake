@@ -2,7 +2,7 @@
 
 {
   nixosSystem = import ./nixosSystem.nix {
-    inherit inputs;
+    inherit inputs cfg;
   };
 
   relativeToRoot = lib.path.append ../.;
