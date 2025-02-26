@@ -51,7 +51,7 @@
       inherit nur;
     };
     system-gen = (import ./cfg-lib {
-      inherit lib cfg;
+      inherit inputs lib cfg;
     }).nixosSystem;
   in {
     nixosConfigurations = with cfg; {
