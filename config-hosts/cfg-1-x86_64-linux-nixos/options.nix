@@ -18,15 +18,17 @@
     SystemVersion = "25.05";
     SystemChannel = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable";
     KernelPackages = pkgs.linuxPackages_zen;
+    SysModPath = ../../modules-system/modules;
     SystemModules = [
-      ../../modules-system/modules/caddy.nix
-      ../../modules-system/modules/nix-ld.nix
-      ../../modules-system/modules/steam.nix
+      ${SysModPath}/caddy.nix
+      ${SysModPath}/nix-ld.nix
+      ${SysModPath}/steam.nix
     ];
     SystemPackages = with pkgs; [
       btrfs-assistant
       p7zip-rar
       fastfetch
+      nix-tree
     ];
 
     NixldLibs = with pkgs; [
@@ -38,14 +40,15 @@
     ];
 
     HomeManagerVersion = "25.05";
+    HomeModPath = ../../modules-home/modules;
     HomeModules = [
-      ../../modules-home/modules/just.nix
-      ../../modules-home/modules/kitty.nix
-      ../../modules-home/modules/musicfox.nix
-      ../../modules-home/modules/ssh.nix
-      ../../modules-home/modules/vscode.nix
-      ../../modules-home/modules/yazi.nix
-      ../../modules-home/modules/zsh.nix
+      ${HomeModPath}/just.nix
+      ${HomeModPath}/kitty.nix
+      ${HomeModPath}/musicfox.nix
+      ${HomeModPath}/ssh.nix
+      ${HomeModPath}/vscode.nix
+      ${HomeModPath}/yazi.nix
+      ${HomeModPath}/zsh.nix
     ];
     HomePackages = with pkgs; [
       libreoffice

@@ -2,6 +2,11 @@
   description = "Frederick's NixOS Flake";
 
   nixConfig = {
+    experimental-features = [
+      "flakes"
+      "nix-command"
+      "ca-derivations"
+    ];
     substituters = [
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
       "https://mirrors.ustc.edu.cn/nix-channels/store"
@@ -77,8 +82,8 @@
       ];
     };
   in {
-    nixosConfigurations = with hosts-conf;{
-      "${test.hostname}" = system-gen { host-conf = MyNixOSPC; };
+    nixosConfigurations = with hosts-conf; {
+      "${test.hostname}" = system-gen { host-conf = test; };
       "${MyNixOSPC.hostname}" = system-gen { host-conf = MyNixOSPC; };
     };
   };

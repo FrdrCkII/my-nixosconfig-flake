@@ -1,6 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
+  environment.SystemPackages = with pkgs; {
+    pulseaudio
+  };
   services.displayManager.ly.enable = true;
   services.gnome.gnome-keyring.enable = true;
   programs = {
