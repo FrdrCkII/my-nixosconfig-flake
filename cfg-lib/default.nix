@@ -1,7 +1,9 @@
-{ lib, cfg, ... }:
+{ lib, cfg, inputs, ... }:
 
 {
-  nixosSystem = import ./nixosSystem.nix;
+  nixosSystem = import ./nixosSystem.nix {
+    inherit inputs;
+  };
 
   relativeToRoot = lib.path.append ../.;
   scanPaths = path:
