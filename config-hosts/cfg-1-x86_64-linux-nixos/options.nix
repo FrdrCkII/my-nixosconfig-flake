@@ -1,6 +1,6 @@
 { pkgs, stable-pkgs, ... }: let
-  SysModPath = ../../modules-system/modules/;
-  HomeModPath = ../../modules-home/modules/;
+  SysModPath = ../../modules-system/modules;
+  HomeModPath = ../../modules-home/modules;
 in {
   config = rec {
     username = "FrdrCkII";
@@ -19,10 +19,10 @@ in {
     SystemVersion = "25.05";
     SystemChannel = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable";
     KernelPackages = pkgs.linuxPackages_zen;
-    SystemModules = with SysModPath; [
-      caddy.nix
-      nix-ld.nix
-      steam.nix
+    SystemModules = [
+      ${SysModPath}/caddy.nix
+      ${SysModPath}/nix-ld.nix
+      ${SysModPath}/steam.nix
     ];
     SystemPackages = with pkgs; [
       btrfs-assistant
@@ -39,14 +39,14 @@ in {
     ];
 
     HomeManagerVersion = "25.05";
-    HomeModules = with HomeModPath; [
-      just.nix
-      kitty.nix
-      musicfox.nix
-      ssh.nix
-      vscode.nix
-      yazi.nix
-      zsh.nix
+    HomeModules = [
+      ${HomeModPath}/just.nix
+      ${HomeModPath}/kitty.nix
+      ${HomeModPath}/musicfox.nix
+      ${HomeModPath}/ssh.nix
+      ${HomeModPath}/vscode.nix
+      ${HomeModPath}/yazi.nix
+      ${HomeModPath}/zsh.nix
     ];
     HomePackages = with pkgs; [
       libreoffice
