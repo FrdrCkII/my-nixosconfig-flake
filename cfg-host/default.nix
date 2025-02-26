@@ -16,7 +16,10 @@
       inherit nixpkgs-stable;
       inherit nur;
     };
-    mod = (import ./${configname}).modules;
+    mod = (import ./${configname} {
+      pkgs = pkg.unstable-pkgs;
+      stable-pkgs = pkg.stable-pkgs;
+    }).modules;
     opt = (import ./${configname} {
       pkgs = pkg.unstable-pkgs;
       stable-pkgs = pkg.stable-pkgs;
@@ -33,7 +36,10 @@
       inherit nixpkgs-stable;
       inherit nur;
     };
-    # mod = (import ./${configname}).modules;
+    mod = (import ./${configname} {
+      pkgs = pkg.unstable-pkgs;
+      stable-pkgs = pkg.stable-pkgs;
+    }).modules;
     opt = (import ./${configname} {
       pkgs = pkg.unstable-pkgs;
       stable-pkgs = pkg.stable-pkgs;
