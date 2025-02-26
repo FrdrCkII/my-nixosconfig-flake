@@ -1,4 +1,4 @@
-{ cfg }:let
+{ inputs, cfg }:let
   inherit cfg;
   system = cfg.system;
   specialArgs = {
