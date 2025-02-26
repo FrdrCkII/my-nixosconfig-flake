@@ -1,16 +1,8 @@
-{ config, pkgs, lib, opt-cfg, ... }:
-
-{
-  imports = [
-    ./modules/just.nix
-    ./modules/kitty.nix
-    ./modules/musicfox.nix
-    ./modules/ssh.nix
-    ./modules/vscode.nix
-    ./modules/yazi.nix
-    ./modules/zsh.nix
+{ config, pkgs, lib, opt-cfg, ... }: let 
+  home-modules = with pkgs; [
     ./packages.nix
   ]
+  ++ opt-cfg.HomeModules
   ++lib.optionals (builtins.elem "hyprland" opt-cfg.desktop) [
     ./desktop/hyprland.nix
     ./modules/mako.nix
@@ -23,6 +15,8 @@
   ++lib.optionals (builtins.elem "xfce" opt-cfg.desktop) [
     ./desktop/xfce.nix
   ];
+in {
+  imports = home-modules;
   programs.home-manager.enable = true;
   home = {
     username = opt-cfg.username;

@@ -18,6 +18,11 @@
     SystemVersion = "25.05";
     SystemChannel = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable";
     KernelPackages = pkgs.linuxPackages_zen;
+    SystemModules = [
+      ./modules/caddy.nix
+      ./modules/nix-ld.nix
+      ./modules/steam.nix
+    ];
     SystemPackages = with pkgs; [
       btrfs-assistant
       p7zip-rar
@@ -33,6 +38,15 @@
     ];
 
     HomeManagerVersion = "25.05";
+    HomeModules = [
+      ./modules/just.nix
+      ./modules/kitty.nix
+      ./modules/musicfox.nix
+      ./modules/ssh.nix
+      ./modules/vscode.nix
+      ./modules/yazi.nix
+      ./modules/zsh.nix
+    ];
     HomePackages = with pkgs; [
       libreoffice
       ffmpeg
