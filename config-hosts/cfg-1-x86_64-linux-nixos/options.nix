@@ -16,11 +16,24 @@
     ];
 
     SystemVersion = "25.05";
+    SystemChannel = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable";
+    KernelPackages = with pkgs; [
+      linuxPackages_zen
+    ];
     SystemPackages = with pkgs; [
       btrfs-assistant
       p7zip-rar
       fastfetch
     ];
+
+    NixldLibs = with pkgs; [
+      glibc
+      zlib
+      openssl
+      libGL
+      xorg.libX11
+    ];
+
     HomeManagerVersion = "25.05";
     HomePackages = with pkgs; [
       libreoffice

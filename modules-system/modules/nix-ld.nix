@@ -1,14 +1,10 @@
-{ config, pkgs, lib, ... }:
-
-{
+{ config, pkgs, lib, opt-cfg, ... }: let
+  nix-ld-libraries = with pkgs; [
+  ]
+  ++ opt-cfg.NixldLibs;
+in {
   programs.nix-ld = {
     enable = true;
-    libraries = with pkgs; [
-      glibc
-      zlib
-      openssl
-      libGL
-      xorg.libX11
-    ];
+    libraries = nix-ld-libraries;
   };
 }
