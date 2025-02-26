@@ -52,7 +52,7 @@
     (lib.mkIf (opt-cfg.SystemChannel != null) {
       system.autoUpgrade.channel = opt-cfg.SystemChannel;
     })
-    (lib.mkIf (opt-cfg.kernelPackages != null) {
+    (lib.mkIf (opt-cfg.kernelPackages != []) {
       boot.kernelPackages = opt-cfg.KernelPackages;
     })
     (lib.mkIf (opt-cfg.rootpw != null) {
