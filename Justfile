@@ -13,3 +13,6 @@ up:
 
 bd:
     sudo nixos-rebuild switch --impure --flake .#c2h5oc2h4
+
+test:
+    sudo nixos-rebuild test --impure --flake .#c2h5oc2h4
