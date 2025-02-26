@@ -50,7 +50,7 @@
       inherit nur;
     };
     system-gen = { host-conf }: nixpkgs.lib.nixosSystem {
-      inherit system;
+      system = host-conf.system;
       specialArgs = {
         inherit inputs;
         inherit allowed-unfree-packages;

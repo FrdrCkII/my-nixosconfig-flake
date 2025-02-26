@@ -12,7 +12,11 @@ up:
     sudo nix flake update
 
 bd host:
+    git add *
+    git commit -m "update"
     sudo nixos-rebuild switch --impure --flake .#{{host}}
 
 test host:
+    git add *
+    git commit -m "update"
     sudo nixos-rebuild test --impure --flake .#{{host}}
