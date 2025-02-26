@@ -44,15 +44,10 @@
     home-manager,
     ...
   } @inputs: let
-    system = "x86_64-linux";
-    pkgs-conf = import ./cfg-hosts/pkgs.nix {
-      inherit system;
+    hosts-conf = import ./cfg-hosts {
       inherit nixpkgs;
       inherit nixpkgs-stable;
       inherit nur;
-    };
-    hosts-conf = import ./cfg-hosts {
-      inherit pkgs-conf;
     };
     system-gen = { host-conf }: with pkgs-conf; nixpkgs.lib.nixosSystem {
       inherit system;
