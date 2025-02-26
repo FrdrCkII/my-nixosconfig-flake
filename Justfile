@@ -11,8 +11,8 @@ cp:
 up:
     sudo nix flake update
 
-bd:
-    sudo nixos-rebuild switch --impure --flake .#c2h5oc2h4
+bd host:
+    sudo nixos-rebuild switch --impure --flake .#{{host}}
 
-test:
-    sudo nixos-rebuild test --impure --flake .#c2h5oc2h4
+test host:
+    sudo nixos-rebuild test --impure --flake .#{{host}}

@@ -78,6 +78,7 @@
     };
   in {
     nixosConfigurations = with hosts-conf;{
+      "${test.hostname}" = system-gen { host-conf = MyNixOSPC; };
       "${MyNixOSPC.hostname}" = system-gen { host-conf = MyNixOSPC; };
     };
   };

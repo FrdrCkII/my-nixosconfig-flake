@@ -41,13 +41,25 @@
     allowUnfreePredicate = allowed-unfree-packages;
     permittedInsecurePackages = allowed-insecure-packages;
   };
-  system.stateVersion = opt-cfg.SystemVersion;
-  system.autoUpgrade.channel = lib.mkIf opt-cfg.SystemChannel { opt-cfg.SystemChannel };
-  boot.kernelPackages = lib.mkIf opt-cfg.KernelPackages { opt-cfg.KernelPackages };
-  users.users.root.hashedPassword = opt-cfg.rootpw;
   users.users.${opt-cfg.username} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
-    hashedPassword = opt-cfg.userpw;
   };
+  config = lib.mkMerge [
+    (lib.mkIf (opt-cfg.SystemVersion != null) {
+      system.stateVersion = opt-cfg.SystemVersion;
+    })
+    (lib.mkIf (opt-cfg.SystemChannel != null) {
+      system.autoUpgrade.channel = opt-cfg.SystemChannel;
+    })
+    (lib.mkIf (opt-cfg.kernelPackages != null) {
+      boot.kernelPackages = opt-cfg.KernelPackages;
+    })
+    (lib.mkIf (opt-cfg.rootpw != null) {
+      users.users.root.hashedPassword = opt-cfg.rootpw;
+    })
+    (lib.mkIf (opt-cfg.userpw != null) {
+      users.users.${opt-cfg.username}.hashedPassword = opt-cfg.userpw;
+    })
+  ];
 }
