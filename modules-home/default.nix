@@ -3,16 +3,16 @@
     ./packages.nix
   ]
   ++ opt-cfg.HomeModules
-  ++lib.optionals (builtins.elem "hyprland" opt-cfg.desktop) [
+  ++ lib.optionals (builtins.elem "hyprland" opt-cfg.desktop) [
     ./desktop/hyprland.nix
     ./modules/mako.nix
     ./modules/rofi.nix
     ./modules/waybar.nix
   ]
-  ++lib.optionals (builtins.elem "kde" opt-cfg.desktop) [
+  ++ lib.optionals (builtins.elem "kde" opt-cfg.desktop) [
     ./desktop/kde.nix
   ]
-  ++lib.optionals (builtins.elem "xfce" opt-cfg.desktop) [
+  ++ lib.optionals (builtins.elem "xfce" opt-cfg.desktop) [
     ./desktop/xfce.nix
   ];
 in {
