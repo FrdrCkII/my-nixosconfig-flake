@@ -64,9 +64,9 @@
     "format": "音量: {volume}%",
     "format-muted": "静音",
     "tooltip": false,
-    "on-scroll-up": "pactl -- set-sink-volume 0 +1%",
-    "on-scroll-down": "pactl -- set-sink-volume 0 -1%",
-    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
   "backlight": {
     "format": "亮度: {percent}%",
