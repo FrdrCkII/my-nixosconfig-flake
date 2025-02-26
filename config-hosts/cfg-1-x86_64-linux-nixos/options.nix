@@ -1,8 +1,7 @@
-{ pkgs, stable-pkgs, ... }:
-
-{
+{ pkgs, stable-pkgs, ... }: let
   SysModPath = "../../modules-system/modules";
   HomeModPath = "../../modules-home/modules";
+in {
   config = rec {
     username = "FrdrCkII";
     rootpw = "$y$j9T$YHvpqmryW6Uk4LsBPj3S41$bAMv6EQYDOrQ3kAagjf.2TPFndEAuEjllKFeFrBlfM9";
