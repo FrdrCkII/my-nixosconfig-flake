@@ -44,6 +44,7 @@
     home-manager,
     ...
   } @inputs: let
+    inherit (inputs.nixpkgs) lib;
     cfg = import ./cfg-host {
       inherit nixpkgs;
       inherit nixpkgs-stable;
