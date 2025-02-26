@@ -18,7 +18,7 @@
     SystemVersion = "25.05";
     SystemChannel = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable";
     KernelPackages = pkgs.linuxPackages_zen;
-    SysModPath = ../../modules-system/modules;
+    SysModPath = "../../modules-system/modules";
     SystemModules = [
       ${SysModPath}/caddy.nix
       ${SysModPath}/nix-ld.nix
@@ -40,7 +40,7 @@
     ];
 
     HomeManagerVersion = "25.05";
-    HomeModPath = ../../modules-home/modules;
+    HomeModPath = "../../modules-home/modules";
     HomeModules = [
       ${HomeModPath}/just.nix
       ${HomeModPath}/kitty.nix
