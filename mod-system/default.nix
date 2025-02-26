@@ -8,7 +8,7 @@
   ...
 }: let 
   system-modules = with pkgs; [
-    ../config-hosts/${configname}
+    ../cfg-hosts/${configname}
     ./config/boot.nix
     ./config/hardware.nix
     ./config/i18n.nix

@@ -2,11 +2,11 @@
 
 {
   home.packages = with pkgs; [
-    waybar
+    kitty
   ];
   home.file = {
-    ".config/waybar" = {
-      source = ../../config-dotfiles/${configname}/waybar;
+    ".config/kitty" = {
+      source = ../../cfg-dotfiles/${configname}/kitty;
       recursive = true;
     };
   };

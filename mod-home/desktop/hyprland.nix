@@ -2,11 +2,11 @@
 
 {
   home.packages = with pkgs; [
-    mako
+    swww
   ];
   home.file = {
-    ".config/mako" = {
-      source = ../../config-dotfiles/${configname}/mako;
+    ".config/hypr" = {
+      source = ../../cfg-dotfiles/${configname}/hypr;
       recursive = true;
     };
   };

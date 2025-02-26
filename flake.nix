@@ -45,13 +45,13 @@
     ...
   } @inputs: let
     system = "x86_64-linux";
-    pkgs-conf = import ./config-hosts/pkgs.nix {
+    pkgs-conf = import ./cfg-hosts/pkgs.nix {
       inherit system;
       inherit nixpkgs;
       inherit nixpkgs-stable;
       inherit nur;
     };
-    hosts-conf = import ./config-hosts {
+    hosts-conf = import ./cfg-hosts {
       inherit pkgs-conf;
     };
     system-gen = { host-conf }: with pkgs-conf; nixpkgs.lib.nixosSystem {
@@ -65,11 +65,11 @@
         opt-cfg = host-conf.config;
       };
       modules = [
-        ./modules-system
+        ./mod-system
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.${host-conf.config.username} = import ./modules-home;
+          home-manager.users.${host-conf.config.username} = import ./mod-home;
           home-manager.extraSpecialArgs =  {
             inherit inputs;
             inherit allowed-unfree-packages;

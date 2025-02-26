@@ -2,11 +2,11 @@
 
 {
   home.packages = with pkgs; [
-    kitty
+    mako
   ];
   home.file = {
-    ".config/kitty" = {
-      source = ../../config-dotfiles/${configname}/kitty;
+    ".config/mako" = {
+      source = ../../cfg-dotfiles/${configname}/mako;
       recursive = true;
     };
   };

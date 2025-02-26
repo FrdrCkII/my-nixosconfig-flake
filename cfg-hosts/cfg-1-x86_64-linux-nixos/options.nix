@@ -19,9 +19,9 @@
     SystemChannel = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable";
     KernelPackages = pkgs.linuxPackages_zen;
     SystemModules = [
-      ../../modules-system/modules/caddy.nix
-      ../../modules-system/modules/nix-ld.nix
-      ../../modules-system/modules/steam.nix
+      ../../mod-system/modules/caddy.nix
+      ../../mod-system/modules/nix-ld.nix
+      ../../mod-system/modules/steam.nix
     ];
     SystemPackages = with pkgs; [
       btrfs-assistant
@@ -40,13 +40,13 @@
 
     HomeManagerVersion = "25.05";
     HomeModules = [
-      ../../modules-home/modules/just.nix
-      ../../modules-home/modules/kitty.nix
-      ../../modules-home/modules/musicfox.nix
-      ../../modules-home/modules/ssh.nix
-      ../../modules-home/modules/vscode.nix
-      ../../modules-home/modules/yazi.nix
-      ../../modules-home/modules/zsh.nix
+      ../../mod-home/modules/just.nix
+      ../../mod-home/modules/kitty.nix
+      ../../mod-home/modules/musicfox.nix
+      ../../mod-home/modules/ssh.nix
+      ../../mod-home/modules/vscode.nix
+      ../../mod-home/modules/yazi.nix
+      ../../mod-home/modules/zsh.nix
     ];
     HomePackages = with pkgs; [
       libreoffice
