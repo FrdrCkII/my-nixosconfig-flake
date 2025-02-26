@@ -1,6 +1,6 @@
 { pkgs, stable-pkgs, ... }: let
-  SysModPath = ../../modules-system/modules;
-  HomeModPath = ../../modules-home/modules;
+  SysModPath = ../../modules-system/modules/;
+  HomeModPath = ../../modules-home/modules/;
 in {
   config = rec {
     username = "FrdrCkII";
