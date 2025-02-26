@@ -1,7 +1,7 @@
-{ config, pkgs, lib, opt-cfg, ... }: let
+{ config, pkgs, lib, cfg, ... }: let
   nix-ld-libraries = with pkgs; [
   ]
-  ++ opt-cfg.NixldLibs;
+  ++ cfg.opt.NixldLibs;
 in {
   programs.nix-ld = {
     enable = true;

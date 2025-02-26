@@ -10,7 +10,7 @@
     inherit nixpkgs;
     inherit nixpkgs-stable;
   };
-  cfg-opt = cfg-hosts.config;
+  cfg.opt = cfg-hosts.config;
   # Add my custom lib, vars, nixpkgs instance, and all the inputs to specialArgs,
   # so that I can use them in all my nixos/home-manager/darwin modules.
   genSpecialArgs = system:

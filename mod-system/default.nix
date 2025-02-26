@@ -4,7 +4,7 @@
   allowed-insecure-packages,
   hostname,
   configname,
-  opt-cfg,
+  cfg,
   ...
 }: let 
   system-modules = with pkgs; [
@@ -15,20 +15,20 @@
     ./options.nix
     ./packages.nix
   ]
-  ++ opt-cfg.SystemModules
-  ++ lib.optionals (builtins.elem "amd" opt-cfg.drivers) [
+  ++ cfg.opt.SystemModules
+  ++ lib.optionals (builtins.elem "amd" cfg.opt.drivers) [
     ./drivers/amd.nix
   ]
-  ++ lib.optionals (builtins.elem "nvidia" opt-cfg.drivers) [
+  ++ lib.optionals (builtins.elem "nvidia" cfg.opt.drivers) [
     ./drivers/nvidia.nix
   ]
-  ++ lib.optionals (builtins.elem "hyprland" opt-cfg.desktop) [
+  ++ lib.optionals (builtins.elem "hyprland" cfg.opt.desktop) [
     ./desktop/hyprland.nix
   ]
-  ++ lib.optionals (builtins.elem "kde" opt-cfg.desktop) [
+  ++ lib.optionals (builtins.elem "kde" cfg.opt.desktop) [
     ./desktop/kde.nix
   ]
-  ++ lib.optionals (builtins.elem "xfce" opt-cfg.desktop) [
+  ++ lib.optionals (builtins.elem "xfce" cfg.opt.desktop) [
     ./desktop/xfce.nix
   ];
 in {
@@ -39,7 +39,7 @@ in {
     allowUnfreePredicate = allowed-unfree-packages;
     permittedInsecurePackages = allowed-insecure-packages;
   };
-  users.users.${opt-cfg.username} = {
+  users.users.${cfg.opt.username} = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
   };

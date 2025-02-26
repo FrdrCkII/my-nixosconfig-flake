@@ -1,7 +1,7 @@
-{ config, pkgs, lib, opt-cfg, ... }: let
+{ config, pkgs, lib, cfg, ... }: let
   home-packages = with pkgs; [
   ]
-  ++ opt-cfg.HomePackages;
+  ++ cfg.opt.HomePackages;
 in {
   home.packages = home-packages;
 }

@@ -1,8 +1,8 @@
-{ config, pkgs, lib, opt-cfg, ... }: let
+{ config, pkgs, lib, cfg, ... }: let
   system-packages = with pkgs; [
     vim wget git
   ]
-  ++ opt-cfg.SystemPackages;
+  ++ cfg.opt.SystemPackages;
 in {
   environment.systemPackages = system-packages;
 }

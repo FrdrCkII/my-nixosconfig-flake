@@ -44,43 +44,35 @@
     home-manager,
     ...
   } @inputs: let
-    hosts-conf = import ./cfg-hosts {
+    cfg-host = import ./cfg-host {
       inherit nixpkgs;
       inherit nixpkgs-stable;
       inherit nur;
     };
-    system-gen = { host-conf }: nixpkgs.lib.nixosSystem {
-      system = host-conf.system;
+    system-gen = { cfg-host }:let
+      system = cfg-host.system;
+      cfg = cfg-host;
       specialArgs = {
-        inherit inputs;
-        allowed-unfree-packages = host-conf.cfg-pkgs.allowed-unfree-packages;
-        allowed-insecure-packages = host-conf.cfg-pkgs.allowed-insecure-packages;
-        hostname = host-conf.hostname;
-        configname = host-conf.configname;
-        opt-cfg = host-conf.config;
+        inherit inputs cfg;
       };
-      modules = [
-        ./mod-system
-        ./cfg-hosts/${host-conf.configname}/system
-        home-manager.nixosModules.home-manager {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.${host-conf.config.username} = import ./mod-home;
-          home-manager.extraSpecialArgs =  {
-            inherit inputs;
-            allowed-unfree-packages = host-conf.cfg-pkgs.allowed-unfree-packages;
-            allowed-insecure-packages = host-conf.cfg-pkgs.allowed-insecure-packages;
-            hostname = host-conf.hostname;
-            configname = host-conf.configname;
-            opt-cfg = host-conf.config;
-          };
-        }
-      ];
+    in nixpkgs.lib.nixosSystem {
+      inherit system specialArgs;
+      modules = 
+        cfg.mod.nixos-modules
+        ++ ( lib.optionals ( ( lib.lists.length cfg.mod.home-modules ) > 0 ) [
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "home-manager.backup";
+            home-manager.extraSpecialArgs = specialArgs;
+            home-manager.users."${cfg.opt.username}".imports = cfg.mod.home-modules;
+          }
+        ]);
     };
   in {
-    nixosConfigurations = with hosts-conf; {
-      "${test.hostname}" = system-gen { host-conf = test; };
-      "${MyNixOSPC.hostname}" = system-gen { host-conf = MyNixOSPC; };
+    nixosConfigurations = with cfg-host; {
+      "${test.hostname}" = system-gen { cfg-host = test; };
+      "${MyNixOSPC.hostname}" = system-gen { cfg-host = MyNixOSPC; };
     };
   };
 }

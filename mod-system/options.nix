@@ -1,7 +1,7 @@
-{ config, lib, pkgs, opt-cfg, ... }:
+{ config, lib, pkgs, cfg, ... }:
 
 {
-  options.opt-cfg = {
+  options.cfg.opt = {
     systemVersion = lib.mkOption {
       type = lib.types.nullOr lib.types.str;
       default = "25.05";
@@ -29,20 +29,20 @@
     };
   };
   config = lib.mkMerge [
-    (lib.mkIf (opt-cfg.SystemVersion != null) {
-      system.stateVersion = opt-cfg.SystemVersion;
+    (lib.mkIf (cfg.opt.SystemVersion != null) {
+      system.stateVersion = cfg.opt.SystemVersion;
     })
-    (lib.mkIf (opt-cfg.SystemChannel != null) {
-      system.autoUpgrade.channel = opt-cfg.SystemChannel;
+    (lib.mkIf (cfg.opt.SystemChannel != null) {
+      system.autoUpgrade.channel = cfg.opt.SystemChannel;
     })
-    (lib.mkIf (opt-cfg.KernelPackages != null) {
-      boot.kernelPackages = opt-cfg.KernelPackages;
+    (lib.mkIf (cfg.opt.KernelPackages != null) {
+      boot.kernelPackages = cfg.opt.KernelPackages;
     })
-    (lib.mkIf (opt-cfg.rootpw != null) {
-      users.users.root.hashedPassword = opt-cfg.rootpw;
+    (lib.mkIf (cfg.opt.rootpw != null) {
+      users.users.root.hashedPassword = cfg.opt.rootpw;
     })
-    (lib.mkIf (opt-cfg.userpw != null) {
-      users.users.${opt-cfg.username}.hashedPassword = opt-cfg.userpw;
+    (lib.mkIf (cfg.opt.userpw != null) {
+      users.users.${cfg.opt.username}.hashedPassword = cfg.opt.userpw;
     })
   ];
 }
