@@ -1,4 +1,4 @@
-{ config, pkgs, lib, configname, ... }:
+{ config, pkgs, lib, cfg, ... }:
 
 {
   home.packages = with pkgs; [
@@ -6,7 +6,7 @@
   ];
   home.file = {
     ".config/rofi" = {
-      source = ../../cfg-dotf/${configname}/rofi;
+      source = ../../cfg-dotf/${cfg.configname}/rofi;
       recursive = true;
     };
   };

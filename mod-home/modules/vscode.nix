@@ -1,4 +1,4 @@
-{ config, pkgs, lib, configname, ... }:
+{ config, pkgs, lib, cfg, ... }:
 
 {
   programs.vscode = {

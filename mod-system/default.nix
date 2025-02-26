@@ -2,8 +2,6 @@
   config, lib, pkgs,
   allowed-unfree-packages,
   allowed-insecure-packages,
-  hostname,
-  configname,
   cfg,
   ...
 }: let 
@@ -15,7 +13,6 @@
     ./options.nix
     ./packages.nix
   ]
-  ++ cfg.opt.SystemModules
   ++ lib.optionals (builtins.elem "amd" cfg.opt.drivers) [
     ./drivers/amd.nix
   ]
@@ -33,11 +30,11 @@
   ];
 in {
   imports = system-modules;
-  networking.hostName = hostname;
+  networking.hostName = cfg.hostname;
   networking.networkmanager.enable = true;
   nixpkgs.config = {
-    allowUnfreePredicate = allowed-unfree-packages;
-    permittedInsecurePackages = allowed-insecure-packages;
+    allowUnfreePredicate = cfg.pkg.allowed-unfree-packages;
+    permittedInsecurePackages = cfg.pkg.allowed-insecure-packages;
   };
   users.users.${cfg.opt.username} = {
     isNormalUser = true;

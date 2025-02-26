@@ -1,4 +1,4 @@
-{ config, pkgs, lib, configname, ... }:
+{ config, pkgs, lib, cfg, ... }:
 
 {
   home.packages = with pkgs; [
@@ -6,7 +6,7 @@
   ];
   home.file = {
     ".config/hypr" = {
-      source = ../../cfg-dotf/${configname}/hypr;
+      source = ../../cfg-dotf/${cfg.configname}/hypr;
       recursive = true;
     };
   };

@@ -2,7 +2,6 @@
   home-modules = with pkgs; [
     ./packages.nix
   ]
-  ++ cfg.opt.HomeModules
   ++ lib.optionals (builtins.elem "hyprland" cfg.opt.desktop) [
     ./desktop/hyprland.nix
     ./modules/mako.nix

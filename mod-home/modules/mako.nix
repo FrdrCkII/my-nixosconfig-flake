@@ -1,4 +1,4 @@
-{ config, pkgs, lib, configname, ... }:
+{ config, pkgs, lib, cfg, ... }:
 
 {
   home.packages = with pkgs; [
@@ -6,7 +6,7 @@
   ];
   home.file = {
     ".config/mako" = {
-      source = ../../cfg-dotf/${configname}/mako;
+      source = ../../cfg-dotf/${cfg.configname}/mako;
       recursive = true;
     };
   };

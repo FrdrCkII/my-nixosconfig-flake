@@ -1,4 +1,4 @@
-{ config, pkgs, lib, configname, ... }:
+{ config, pkgs, lib, cfg, ... }:
 
 {
   home.packages = with pkgs; [
@@ -24,7 +24,7 @@
       gutter = "-1";
     };
   };
-  home.file.".config/zsh/zimfw/zimrc".source = ../../cfg-dotf/${configname}/zimrc;
+  home.file.".config/zsh/zimfw/zimrc".source = ../../cfg-dotf/${cfg.configname}/zimrc;
   programs.zsh = {
     enable = true;
     enableCompletion = true;

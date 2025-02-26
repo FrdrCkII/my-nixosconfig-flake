@@ -1,4 +1,4 @@
-{ config, pkgs, lib, configname, ... }:
+{ config, pkgs, lib, cfg, ... }:
 
 {
   home.packages = with pkgs; [
@@ -6,7 +6,7 @@
   ];
   home.file = {
     ".config/go-musicfox" = {
-      source = ../../cfg-dotf/${configname}/go-musicfox;
+      source = ../../cfg-dotf/${cfg.configname}/go-musicfox;
       recursive = true;
     };
   };
