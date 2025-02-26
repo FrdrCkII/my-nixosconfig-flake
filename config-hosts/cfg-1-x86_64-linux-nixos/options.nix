@@ -1,6 +1,8 @@
 { pkgs, stable-pkgs, ... }:
 
 {
+  SysModPath = "../../modules-system/modules";
+  HomeModPath = "../../modules-home/modules";
   config = rec {
     username = "FrdrCkII";
     rootpw = "$y$j9T$YHvpqmryW6Uk4LsBPj3S41$bAMv6EQYDOrQ3kAagjf.2TPFndEAuEjllKFeFrBlfM9";
@@ -18,7 +20,6 @@
     SystemVersion = "25.05";
     SystemChannel = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable";
     KernelPackages = pkgs.linuxPackages_zen;
-    SysModPath = "../../modules-system/modules";
     SystemModules = [
       ${SysModPath}/caddy.nix
       ${SysModPath}/nix-ld.nix
@@ -40,7 +41,6 @@
     ];
 
     HomeManagerVersion = "25.05";
-    HomeModPath = "../../modules-home/modules";
     HomeModules = [
       ${HomeModPath}/just.nix
       ${HomeModPath}/kitty.nix
