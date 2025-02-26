@@ -53,8 +53,8 @@
       system = host-conf.system;
       specialArgs = {
         inherit inputs;
-        inherit allowed-unfree-packages;
-        inherit allowed-insecure-packages;
+        allowed-unfree-packages = host-conf.cfg-pkgs.allowed-unfree-packages;
+        allowed-insecure-packages = host-conf.cfg-pkgs.allowed-insecure-packages;
         hostname = host-conf.hostname;
         configname = host-conf.configname;
         opt-cfg = host-conf.config;
@@ -67,8 +67,8 @@
           home-manager.users.${host-conf.config.username} = import ./mod-home;
           home-manager.extraSpecialArgs =  {
             inherit inputs;
-            inherit allowed-unfree-packages;
-            inherit allowed-insecure-packages;
+            allowed-unfree-packages = host-conf.cfg-pkgs.allowed-unfree-packages;
+            allowed-insecure-packages = host-conf.cfg-pkgs.allowed-insecure-packages;
             hostname = host-conf.hostname;
             configname = host-conf.configname;
             opt-cfg = host-conf.config;
