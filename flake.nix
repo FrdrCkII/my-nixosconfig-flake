@@ -54,7 +54,7 @@
       inherit lib cfg;
     }).nixosSystem;
   in {
-    nixosConfigurations = with cfg-host; {
+    nixosConfigurations = with cfg; {
       "${test.hostname}" = system-gen { cfg = test; };
       "${MyNixOSPC.hostname}" = system-gen { cfg = MyNixOSPC; };
     };
