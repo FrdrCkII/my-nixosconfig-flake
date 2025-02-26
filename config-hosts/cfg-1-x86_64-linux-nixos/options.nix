@@ -19,7 +19,7 @@ in {
     SystemVersion = "25.05";
     SystemChannel = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable";
     KernelPackages = pkgs.linuxPackages_zen;
-    SystemModules = with ${SysModPath}; [
+    SystemModules = with SysModPath; [
       caddy.nix
       nix-ld.nix
       steam.nix
@@ -39,7 +39,7 @@ in {
     ];
 
     HomeManagerVersion = "25.05";
-    HomeModules = with ${HomeModPath}; [
+    HomeModules = with HomeModPath; [
       just.nix
       kitty.nix
       musicfox.nix
