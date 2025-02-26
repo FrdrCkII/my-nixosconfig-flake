@@ -61,7 +61,7 @@
       };
       modules = [
         ./mod-system
-        ./cfg-hosts/${configname}/system
+        ./cfg-hosts/${host-conf.configname}/system
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
