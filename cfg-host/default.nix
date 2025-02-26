@@ -10,17 +10,17 @@
     hostname = "test";
     configname = "cfg-0-test-null";
     system = "x86_64-linux";
-    pkg = import ./${cfg.configname}/pkgs.nix {
+    pkg = import ./${configname}/pkgs.nix {
       inherit system;
       inherit nixpkgs;
       inherit nixpkgs-stable;
       inherit nur;
     };
-    mod = (import ./${cfg.configname} {
+    mod = (import ./${configname} {
       pkgs = pkg.unstable-pkgs;
       stable-pkgs = pkg.stable-pkgs;
     }).modules;
-    opt = (import ./${cfg.configname} {
+    opt = (import ./${configname} {
       pkgs = pkg.unstable-pkgs;
       stable-pkgs = pkg.stable-pkgs;
     }).options;
@@ -30,17 +30,17 @@
     hostname = "c2h5oc2h4";
     configname = "cfg-1-x86_64-linux-nixos";
     system = "x86_64-linux";
-    pkg = import ./${cfg.configname}/pkgs.nix {
+    pkg = import ./${configname}/pkgs.nix {
       inherit system;
       inherit nixpkgs;
       inherit nixpkgs-stable;
       inherit nur;
     };
-    mod = (import ./${cfg.configname} {
+    mod = (import ./${configname} {
       pkgs = pkg.unstable-pkgs;
       stable-pkgs = pkg.stable-pkgs;
     }).modules;
-    opt = (import ./${cfg.configname} {
+    opt = (import ./${configname} {
       pkgs = pkg.unstable-pkgs;
       stable-pkgs = pkg.stable-pkgs;
     }).options;
