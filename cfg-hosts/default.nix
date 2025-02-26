@@ -16,7 +16,7 @@
       inherit nixpkgs-stable;
       inherit nur;
     };
-    config = (import ./${configname}/option.nix {
+    config = (import ./${configname}/options.nix {
       pkgs = cfg-pkgs.unstable-pkgs;
       stable-pkgs = cfg-pkgs.stable-pkgs;
     }).config;
@@ -32,7 +32,7 @@
       inherit nixpkgs-stable;
       inherit nur;
     };
-    config = (import ./${configname}/option.nix {
+    config = (import ./${configname}/options.nix {
       pkgs = cfg-pkgs.unstable-pkgs;
       stable-pkgs = cfg-pkgs.stable-pkgs;
     }).config;
