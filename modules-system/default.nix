@@ -17,12 +17,6 @@
     ./packages.nix
   ]
   ++ opt-cfg.SystemModules
-  ++ lib.optionals (builtins.elem "hyprland" opt-cfg.desktop) [
-    ./desktop/hyprland.nix
-    ./modules/mako.nix
-    ./modules/rofi.nix
-    ./modules/waybar.nix
-  ]
   ++ lib.optionals (builtins.elem "amd" opt-cfg.drivers) [
     ./drivers/amd.nix
   ]
