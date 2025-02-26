@@ -10,13 +10,21 @@ cp:
 
 up:
     sudo nix flake update
+    git add flake.lock
+    git commit -m "flake update"
 
 bd host:
+    sudo nixos-rebuild switch --impure --flake .#{{host}}
+
+tt host:
+    sudo nixos-rebuild test --impure --flake .#{{host}}
+
+bdg host:
     git add *
     git commit -m "update"
     sudo nixos-rebuild switch --impure --flake .#{{host}}
 
-test host:
+ttg host:
     git add *
     git commit -m "update"
     sudo nixos-rebuild test --impure --flake .#{{host}}
