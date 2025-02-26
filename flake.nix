@@ -50,9 +50,7 @@
       inherit nixpkgs-stable;
       inherit nur;
     };
-    system-gen = (import ./cfg-lib {
-      inherit inputs lib cfg;
-    }).nixosSystem;
+    system-gen = import ./cfg-lib/nixosSystem.nix;
   in {
     nixosConfigurations = with cfg; {
       "${test.hostname}" = system-gen { cfg = test; };
