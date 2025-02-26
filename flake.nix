@@ -49,7 +49,7 @@
       inherit nixpkgs-stable;
       inherit nur;
     };
-    system-gen = { host-conf }: with pkgs-conf; nixpkgs.lib.nixosSystem {
+    system-gen = { host-conf }: nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = {
         inherit inputs;
