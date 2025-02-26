@@ -6,6 +6,8 @@
   ...
 }:
 rec {
+  SysModPath = "../../modules-system/modules";
+  HomeModPath = "../../modules-home/modules";
   allowed-unfree-packages = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
     "nvidia-x11"
     "nvidia-settings"
