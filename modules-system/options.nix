@@ -14,7 +14,7 @@
     };
     KernelPackages = lib.mkOption {
       type = lib.types.listOf lib.types.attrs;
-      default = [];
+      default = [ pkgs.linuxPackages ];
       description = "kernel packages";
     };
     rootpw = lib.mkOption {

@@ -17,8 +17,8 @@
 
     SystemVersion = "25.05";
     SystemChannel = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable";
-    KernelPackages = with pkgs; [
-      linuxPackages_zen
+    KernelPackages = [
+      pkgs.linuxPackages_zen
     ];
     SystemPackages = with pkgs; [
       btrfs-assistant
