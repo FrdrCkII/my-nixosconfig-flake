@@ -2,21 +2,37 @@
 
 {
   modules = rec {
-    nixos-modules = map cfg-lib.relativeToRoot [
-      "mod-system"
-      "mod-system/modules/caddy.nix"
-      "mod-system/modules/nix-ld.nix"
-      "mod-system/modules/steam.nix"
+    # nixos-modules = map cfg-lib.relativeToRoot [
+    #   "mod-system"
+    #   "mod-system/modules/caddy.nix"
+    #   "mod-system/modules/nix-ld.nix"
+    #   "mod-system/modules/steam.nix"
+    # ];
+    # home-modules = map cfg-lib.relativeToRoot [
+    #   "mod-home"
+    #   "mod-home/modules/just.nix"
+    #   "mod-home/modules/kitty.nix"
+    #   "mod-home/modules/musicfox.nix"
+    #   "mod-home/modules/ssh.nix"
+    #   "mod-home/modules/vscode.nix"
+    #   "mod-home/modules/yazi.nix"
+    #   "mod-home/modules/zsh.nix"
+    # ];
+    nixos-modules = [
+      "../../mod-system"
+      "../../mod-system/modules/caddy.nix"
+      "../../mod-system/modules/nix-ld.nix"
+      "../../mod-system/modules/steam.nix"
     ];
-    home-modules = map cfg-lib.relativeToRoot [
-      "mod-home"
-      "mod-home/modules/just.nix"
-      "mod-home/modules/kitty.nix"
-      "mod-home/modules/musicfox.nix"
-      "mod-home/modules/ssh.nix"
-      "mod-home/modules/vscode.nix"
-      "mod-home/modules/yazi.nix"
-      "mod-home/modules/zsh.nix"
+    home-modules = [
+      "../../mod-home"
+      "../../mod-home/modules/just.nix"
+      "../../mod-home/modules/kitty.nix"
+      "../../mod-home/modules/musicfox.nix"
+      "../../mod-home/modules/ssh.nix"
+      "../../mod-home/modules/vscode.nix"
+      "../../mod-home/modules/yazi.nix"
+      "../../mod-home/modules/zsh.nix"
     ];
   };
   options = rec {

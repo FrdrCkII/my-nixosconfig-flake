@@ -49,7 +49,6 @@
       inherit nixpkgs-stable;
       inherit nur;
     };
-    cfg-lib = import ./cfg-lib;
     system-gen = { cfg-host }:let
       system = cfg-host.system;
       cfg = cfg-host;
