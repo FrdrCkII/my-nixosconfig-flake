@@ -6,7 +6,7 @@
   ];
   home.file = {
     ".config/mako" = {
-      source = ../../cfg-dotfiles/${configname}/mako;
+      source = ../../cfg-dotf/${configname}/mako;
       recursive = true;
     };
   };

@@ -6,7 +6,7 @@
   ];
   home.file = {
     ".config/kitty" = {
-      source = ../../cfg-dotfiles/${configname}/kitty;
+      source = ../../cfg-dotf/${configname}/kitty;
       recursive = true;
     };
   };

@@ -6,7 +6,7 @@
   ];
   home.file = {
     ".config/hypr" = {
-      source = ../../cfg-dotfiles/${configname}/hypr;
+      source = ../../cfg-dotf/${configname}/hypr;
       recursive = true;
     };
   };

@@ -24,7 +24,7 @@
       gutter = "-1";
     };
   };
-  home.file.".config/zsh/zimfw/zimrc".source = ../../cfg-dotfiles/${configname}/zimrc;
+  home.file.".config/zsh/zimfw/zimrc".source = ../../cfg-dotf/${configname}/zimrc;
   programs.zsh = {
     enable = true;
     enableCompletion = true;

@@ -6,7 +6,7 @@
   ];
   # home.file = {
   #   ".config/yazi" = {
-  #     source = ../../cfg-dotfiles/${configname}/yazi;
+  #     source = ../../cfg-dotf/${configname}/yazi;
   #     recursive = true;
   #   };
   # };

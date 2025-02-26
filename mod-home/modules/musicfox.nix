@@ -6,7 +6,7 @@
   ];
   home.file = {
     ".config/go-musicfox" = {
-      source = ../../cfg-dotfiles/${configname}/go-musicfox;
+      source = ../../cfg-dotf/${configname}/go-musicfox;
       recursive = true;
     };
   };

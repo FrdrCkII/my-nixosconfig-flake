@@ -6,7 +6,7 @@
   ];
   home.file = {
     ".config/waybar" = {
-      source = ../../cfg-dotfiles/${configname}/waybar;
+      source = ../../cfg-dotf/${configname}/waybar;
       recursive = true;
     };
   };
