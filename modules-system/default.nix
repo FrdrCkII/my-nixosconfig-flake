@@ -42,12 +42,8 @@
     permittedInsecurePackages = allowed-insecure-packages;
   };
   system.stateVersion = opt-cfg.SystemVersion;
-  lib.mkIf (opt-cfg.SystemChannel == true) {
-    system.autoUpgrade.channel = opt-cfg.SystemChannel;
-  };
-  lib.mkIf (opt-cfg.KernelPackages == true) {
-    boot.kernelPackages = opt-cfg.KernelPackages;
-  };
+  system.autoUpgrade.channel = lib.mkIf opt-cfg.SystemChannel { opt-cfg.SystemChannel };
+  boot.kernelPackages = lib.mkIf opt-cfg.KernelPackages { opt-cfg.KernelPackages };
   users.users.root.hashedPassword = opt-cfg.rootpw;
   users.users.${opt-cfg.username} = {
     isNormalUser = true;
