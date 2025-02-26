@@ -45,6 +45,33 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
   };
+  options.opt-cfg = {
+    systemVersion = lib.mkOption {
+      type = lib.types.nullOr lib.types.str;
+      default = "25.05";
+      description = "system state version";
+    };
+    SystemChannel = lib.mkOption {
+      type = lib.types.nullOr lib.types.str;
+      default = null;
+      description = "system channel";
+    };
+    kernelPackages = lib.mkOption {
+      type = lib.types.listOf lib.types.attrs;
+      default = [];
+      description = "kernel packages";
+    };
+    rootpw = lib.mkOption {
+      type = lib.types.nullOr lib.types.str;
+      default = null;
+      description = "root hashed password";
+    };
+    userpw = lib.mkOption {
+      type = lib.types.nullOr lib.types.str;
+      default = null;
+      description = "user hashed password";
+    };
+  };
   config = lib.mkMerge [
     (lib.mkIf (opt-cfg.SystemVersion != null) {
       system.stateVersion = opt-cfg.SystemVersion;
