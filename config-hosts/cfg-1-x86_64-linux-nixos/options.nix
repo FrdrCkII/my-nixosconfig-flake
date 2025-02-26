@@ -1,4 +1,4 @@
-{ pkgs-conf, pkgs, stable-pkgs, ... }:
+{ pkgs, stable-pkgs, ... }:
 
 {
   config = rec {
@@ -19,9 +19,9 @@
     SystemChannel = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable";
     KernelPackages = pkgs.linuxPackages_zen;
     SystemModules = [
-      ${pkgs-conf.SysModPath}/caddy.nix
-      ${pkgs-conf.SysModPath}/nix-ld.nix
-      ${pkgs-conf.SysModPath}/steam.nix
+      ../../modules-system/modules/caddy.nix
+      ../../modules-system/modules/nix-ld.nix
+      ../../modules-system/modules/steam.nix
     ];
     SystemPackages = with pkgs; [
       btrfs-assistant
@@ -40,13 +40,13 @@
 
     HomeManagerVersion = "25.05";
     HomeModules = [
-      ${pkgs-conf.HomeModPath}/just.nix
-      ${pkgs-conf.HomeModPath}/kitty.nix
-      ${pkgs-conf.HomeModPath}/musicfox.nix
-      ${pkgs-conf.HomeModPath}/ssh.nix
-      ${pkgs-conf.HomeModPath}/vscode.nix
-      ${pkgs-conf.HomeModPath}/yazi.nix
-      ${pkgs-conf.HomeModPath}/zsh.nix
+      ../../modules-home/modules/just.nix
+      ../../modules-home/modules/kitty.nix
+      ../../modules-home/modules/musicfox.nix
+      ../../modules-home/modules/ssh.nix
+      ../../modules-home/modules/vscode.nix
+      ../../modules-home/modules/yazi.nix
+      ../../modules-home/modules/zsh.nix
     ];
     HomePackages = with pkgs; [
       libreoffice
