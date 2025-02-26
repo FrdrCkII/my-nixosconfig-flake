@@ -13,8 +13,8 @@
       description = "system channel";
     };
     KernelPackages = lib.mkOption {
-      type = lib.types.listOf lib.types.attrs;
-      default = [ pkgs.linuxPackages ];
+      type = lib.types.nullOr lib.types.str;
+      default = pkgs.linuxPackages;
       description = "kernel packages";
     };
     rootpw = lib.mkOption {
@@ -35,7 +35,7 @@
     (lib.mkIf (opt-cfg.SystemChannel != null) {
       system.autoUpgrade.channel = opt-cfg.SystemChannel;
     })
-    (lib.mkIf (opt-cfg.KernelPackages != []) {
+    (lib.mkIf (opt-cfg.KernelPackages != null) {
       boot.kernelPackages = opt-cfg.KernelPackages;
     })
     (lib.mkIf (opt-cfg.rootpw != null) {
