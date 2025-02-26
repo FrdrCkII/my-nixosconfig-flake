@@ -1,5 +1,6 @@
 { inputs, cfg }:let
   inherit cfg;
+  inherit (inputs) nixpkgs home-manager;
   system = cfg.system;
   specialArgs = {
     inherit inputs cfg;
