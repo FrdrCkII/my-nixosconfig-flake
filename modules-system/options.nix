@@ -12,7 +12,7 @@
       default = null;
       description = "system channel";
     };
-    kernelPackages = lib.mkOption {
+    KernelPackages = lib.mkOption {
       type = lib.types.listOf lib.types.attrs;
       default = [];
       description = "kernel packages";
