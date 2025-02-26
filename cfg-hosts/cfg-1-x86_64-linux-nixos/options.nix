@@ -11,7 +11,6 @@
       "amd"
     ];
     desktop = [
-      "xfce"
       "hyprland"
     ];
 
