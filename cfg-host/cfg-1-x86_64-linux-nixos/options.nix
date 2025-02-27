@@ -22,6 +22,8 @@
       p7zip-rar
       fastfetch
       nix-tree
+      nix-alien
+      nix-autobahn
     ];
 
     NixldLibs = with pkgs; [
@@ -31,6 +33,7 @@
       libGL
       xorg.libX11
       icu
+      skia
     ];
 
     HomeManagerVersion = "25.05";
