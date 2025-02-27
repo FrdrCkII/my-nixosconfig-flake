@@ -32,4 +32,9 @@ rec {
     config.allowUnfreePredicate = allowed-unfree-packages;
     config.permittedInsecurePackages = allowed-insecure-packages;
   };
+  nur = import inputs.nur {
+    inherit system;
+    config.allowUnfreePredicate = allowed-unfree-packages;
+    config.permittedInsecurePackages = allowed-insecure-packages;
+  };
 }

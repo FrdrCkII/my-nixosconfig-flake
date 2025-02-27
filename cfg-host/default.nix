@@ -8,13 +8,11 @@
     pkg = import ./${configname}/pkgs.nix {
       inherit system inputs;
     };
-    mod = (import ./${configname} {
-      pkgs = pkg.unstable-pkgs;
-      stable-pkgs = pkg.stable-pkgs;
-    }).modules;
+    mod = (import ./${configname}).modules;
     opt = (import ./${configname} {
       pkgs = pkg.unstable-pkgs;
       stable-pkgs = pkg.stable-pkgs;
+      nur = pkg.nur;
     }).options;
   };
 
@@ -25,13 +23,11 @@
     pkg = import ./${configname}/pkgs.nix {
       inherit system inputs;
     };
-    mod = (import ./${configname} {
-      pkgs = pkg.unstable-pkgs;
-      stable-pkgs = pkg.stable-pkgs;
-    }).modules;
+    mod = (import ./${configname}).modules;
     opt = (import ./${configname} {
       pkgs = pkg.unstable-pkgs;
       stable-pkgs = pkg.stable-pkgs;
+      nur = pkg.nur;
     }).options;
   };
 }
