@@ -3,7 +3,7 @@
 {
   programs.firefox = {
     enable = true;
-    packages = pkgs.firefox-beta;
+    package = pkgs.firefox-beta;
     languagePacks = [ "zh-CN" ];
 
     policies = {
