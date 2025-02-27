@@ -24,7 +24,7 @@
         "dom.security.https_first" = true;
       };
       extensions = with inputs.firefox-addons; [
-        pkgs.firefoxPackages.zh-cn
+        zh-cn
       ];
       search = {
         default = "cnbing";
