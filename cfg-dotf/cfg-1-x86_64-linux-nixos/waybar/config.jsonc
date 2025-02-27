@@ -69,11 +69,10 @@
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
   "backlight": {
-	  "device": "intel_backlight",
+	  "device": "amdgpu_bl0",
     "format": "亮度: {percent}%",
-    "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
-    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    "on-scroll-up": "brightnessctl set 5%+",
+    "on-scroll-down": "brightnessctl set 5%-"
   },
   "clock": {
     "format": "{:%Y/%m/%d %H:%M}"
