@@ -24,7 +24,7 @@
       };
       extensions = {
         packages = with pkgs.nur.repos.rycee.firefox-addons; [
-          localcdn-fork-of-decentraleyes
+          localcdn
         ];
       };
       search = {
