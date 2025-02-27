@@ -6,7 +6,7 @@
   specialArgs = {
     inherit inputs cfg;
   };
-  nur-modules = with nur.legacyPackages."${system}"; [
+  nur-modules = with inputs.nur.legacyPackages."${system}"; [
   ]
   ++ cfg.mod.nur-modules;
 in 
@@ -25,7 +25,7 @@ nixpkgs.lib.nixosSystem {
     ])
     ++ ( lib.optionals ( ( lib.lists.length cfg.mod.nur-modules ) > 0 )
       [
-        nur.modules.nixos.default
+        inputs.nur.modules.nixos.default
       ]
       ++ nur-modules
     );
