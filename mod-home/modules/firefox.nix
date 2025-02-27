@@ -3,6 +3,7 @@
 {
   programs.firefox = {
     enable = true;
+    packages = pkgs.firefox-beta;
     languagePacks = [ "zh-CN" ];
 
     policies = {
@@ -25,6 +26,7 @@
       extensions = {
         packages = with pkgs.nur.repos.rycee.firefox-addons; [
           localcdn
+          darkreader
         ];
       };
       search = {
@@ -79,8 +81,8 @@
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = [ "@np" ];
           };
-          "Baidu".metaData.hidden = true;
-          "wikipedia".metaData.hidden = true;
+          "百度".metaData.hidden = true;
+          "维基百科".metaData.hidden = true;
           "Bing".metaData.hidden = true;
           "Google".metaData.hidden = true;
           "Amazon.com".metaData.hidden = true;
