@@ -24,7 +24,7 @@ nixpkgs.lib.nixosSystem {
       }
     ])
     ++ [
-      nur.modules.nixos.default
-      nur.legacyPackages."${system}".repos.iopq.modules.xraya
+      inputs.nur.modules.nixos.default
+      inputs.nur.legacyPackages."${system}".repos.iopq.modules.xraya
     ];
 }
