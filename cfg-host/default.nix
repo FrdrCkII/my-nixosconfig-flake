@@ -1,9 +1,4 @@
-{
-  nixpkgs,
-  nixpkgs-stable,
-  nur,
-  ...
-}:
+{ inputs }:
 
 {
   test = rec {
@@ -11,10 +6,7 @@
     configname = "cfg-0-test-null";
     system = "x86_64-linux";
     pkg = import ./${configname}/pkgs.nix {
-      inherit system;
-      inherit nixpkgs;
-      inherit nixpkgs-stable;
-      inherit nur;
+      inherit system inputs;
     };
     mod = (import ./${configname} {
       pkgs = pkg.unstable-pkgs;

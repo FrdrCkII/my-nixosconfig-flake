@@ -1,12 +1,7 @@
-{
-  system,
-  nixpkgs,
-  nixpkgs-stable,
-  nur,
-  ...
-}:
+{ inputs }:
+
 rec {
-  allowed-unfree-packages = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
+  allowed-unfree-packages = pkg: builtins.elem (inputs.nixpkgs.lib.getName pkg) [
     "nvidia-x11"
     "nvidia-settings"
     "nvidia-persistenced"
@@ -27,12 +22,12 @@ rec {
   ];
   allowed-insecure-packages = [
   ];
-  stable-pkgs = import nixpkgs-stable {
+  stable-pkgs = import inputs.nixpkgs-stable {
     inherit system;
     config.allowUnfreePredicate = allowed-unfree-packages;
     config.permittedInsecurePackages = allowed-insecure-packages;
   };
-  unstable-pkgs = import nixpkgs {
+  unstable-pkgs = import inputs.nixpkgs {
     inherit system;
     config.allowUnfreePredicate = allowed-unfree-packages;
     config.permittedInsecurePackages = allowed-insecure-packages;

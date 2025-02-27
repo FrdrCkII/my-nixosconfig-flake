@@ -46,9 +46,7 @@
   } @inputs: let
     inherit (inputs.nixpkgs) lib;
     cfg = import ./cfg-host {
-      inherit nixpkgs;
-      inherit nixpkgs-stable;
-      inherit nur;
+      inherit inputs;
     };
     system-gen = import ./cfg-lib/nixosSystem.nix {
       inherit inputs cfg;
