@@ -8,7 +8,7 @@
     };
     i2c = {
       enable = true;
-      group = [  ];
+      group = [ "${cfg.opt.username}" ];
     };
   };
   services.pipewire = {
