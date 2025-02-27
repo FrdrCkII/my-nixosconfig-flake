@@ -22,6 +22,6 @@ nixpkgs.lib.nixosSystem {
       }
     ])
     ++ [
-      { nixpkgs.overlays.default = [ inputs.nur.overlay ]; }
+      { nixpkgs.overlays.default = [ nur.overlay ]; }
     ];
 }
