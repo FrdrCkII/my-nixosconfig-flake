@@ -21,7 +21,7 @@
     ];
   };
 
-  outputs = inputs: import ./cfg-host/output.nix inputs;
+  outputs = inputs: import ./cfg-host/outputs.nix inputs;
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
