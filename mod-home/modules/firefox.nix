@@ -23,7 +23,7 @@
         "network.trr.mode" = 5;
         "dom.security.https_first" = true;
       };
-      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+      extensions = with inputs.nur.repos.rycee.firefox-addons; [
         firefoxPackages.zh-cn
       ];
       search = {
