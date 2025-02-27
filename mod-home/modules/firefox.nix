@@ -20,65 +20,81 @@
         "intl.locale.requested" = "zh-CN";
         "browser.search.separatePrivateDefault" = false;
         "browser.search.separatePrivateDefault.ui.enabled" = true;
-        "network.trr.mode" = 5;
         "dom.security.https_first" = true;
       };
+      extensions = {
+        packages = with pkgs.nur.repos.rycee.firefox-addons; [
+          ublock-origin
+        ];
+        settings."uBlock0@raymondhill.net".settings = {
+          selectedFilterLists = [
+            "ublock-filters"
+            "ublock-badware"
+            "ublock-privacy"
+            "ublock-unbreak"
+            "ublock-quick-fixes"
+          ];
+        };
+      };
       search = {
-        default = "cnbing";
+        default = "CNBing";
         force = true;
         engines = {
-          "cnbing" = {
-            urls = [
-              {
-                template = "https://cn.bing.com";
-                params = [
-                  {
-                    name = "q";
-                    value = "{searchTerms}";
-                  }
-                ];
-              }
-            ];
+          "CNBing" = {
+            urls = [{
+              template = "https://cn.bing.com";
+              params = [{
+                name = "q";
+                value = "{searchTerms}";
+              }];
+            }];
             definedAliases = [ "@g" ];
           };
-          "SearXNG" = {
-            urls = [
-              {
-                template = "http://100.108.113.89:8100";
-                params = [
-                  {
-                    name = "q";
-                    value = "{searchTerms}";
-                  }
-                ];
-              }
-            ];
-            definedAliases = [ "@sx" ];
+          "NixOptions" = {
+            urls = [{
+              template = "https://search.nixos.org/options";
+              params = [
+                {
+                  name = "channel";
+                  value = "unstable";
+                }
+                {
+                  name = "type";
+                  value = "packages";
+                }
+                {
+                  name = "query";
+                  value = "{searchTerms}";
+                }
+              ];
+            }];
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = [ "@no" ];
           };
-          "Nix Packages" = {
-            urls = [
-              {
-                template = "https://search.nixos.org/packages";
-                params = [
-                  {
-                    name = "type";
-                    value = "packages";
-                  }
-                  {
-                    name = "query";
-                    value = "{searchTerms}";
-                  }
-                ];
-              }
-            ];
-            icon = "''${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+          "NixPackages" = {
+            urls = [{
+              template = "https://search.nixos.org/packages";
+              params = [
+                {
+                  name = "type";
+                  value = "packages";
+                }
+                {
+                  name = "query";
+                  value = "{searchTerms}";
+                }
+              ];
+            }];
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = [ "@np" ];
           };
+          "Baidu".metaData.hidden = true;
+          "wikipedia".metaData.hidden = true;
           "Bing".metaData.hidden = true;
           "Google".metaData.hidden = true;
           "Amazon.com".metaData.hidden = true;
           "eBay".metaData.hidden = true;
-          "DuckDuckGo".metaData.hidden = false;
+          "DuckDuckGo".metaData.hidden = true;
         };
       };
     };
