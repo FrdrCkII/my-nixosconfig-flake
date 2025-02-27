@@ -1,9 +1,9 @@
-{ inputs, config, pkgs, lib, cfg, ... }:
+{ config, pkgs, lib, cfg, ... }:
 
 {
   programs.firefox = {
     enable = true;
-    package = inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin;
+    languagePacks = [ "zh-CN" ];
 
     policies = {
       DisablePocket = true;
