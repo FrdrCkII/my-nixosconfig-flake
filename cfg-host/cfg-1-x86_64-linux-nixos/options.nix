@@ -22,8 +22,6 @@
       p7zip-rar
       fastfetch
       nix-tree
-      nix-alien
-      nix-autobahn
     ];
 
     NixldLibs = with pkgs; [

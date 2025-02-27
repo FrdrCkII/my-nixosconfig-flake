@@ -1,4 +1,4 @@
-{ config, pkgs, lib, cfg, ... }: let
+{ inputs, config, pkgs, lib, cfg, ... }: let
   nix-ld-libraries = with pkgs; [
     stdenv.cc.cc
   ]
@@ -8,4 +8,7 @@ in {
     enable = true;
     libraries = nix-ld-libraries;
   };
+  environment.systemPackages = with inputs.nix-alien.packages.${cfg.system}; [
+    nix-alien
+  ];
 }
