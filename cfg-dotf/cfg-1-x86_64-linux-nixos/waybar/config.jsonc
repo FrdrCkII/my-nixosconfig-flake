@@ -13,7 +13,7 @@
     "tray",
     "network",
     "pulseaudio",
-    "brightness",
+    "custom/brightness",
     "clock"
   ],
   "fixed-center": true,
@@ -70,10 +70,10 @@
   },
   "custom/brightness": {
     "format": "亮度: {}%",
-    "exec": "ddcutil getvcp 10 | awk '{print $4}' | sed 's/$/%/'",
-    "interval": 5,
-    "on-scroll-up": "./scripts/brightness_control.sh up",
-    "on-scroll-down": "./scripts/brightness_control.sh down"
+    "exec": "echo $(( $(cat /sys/class/backlight/amdgpu_bl0/brightness) * 100 / $(cat /sys/class/backlight/amdgpu_bl0/max_brightness) ))",
+    "interval": 2,
+    "on-click": "bash $HOME/.config/waybar/scripts/brightness_control.sh up",
+    "on-click-right": "bash $HOME/.config/waybar/scripts/brightness_control.sh down"
   },
   "clock": {
     "format": "{:%Y/%m/%d %H:%M}"
