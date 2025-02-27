@@ -1,11 +1,13 @@
-{ inputs, cfg }: let
+{ inputs, lib }:
+{ cfg }: let
   inherit cfg;
   inherit (inputs) nixpkgs home-manager;
   system = cfg.system;
   specialArgs = {
     inherit inputs cfg;
   };
-in nixpkgs.lib.nixosSystem {
+in 
+nixpkgs.lib.nixosSystem {
   inherit system specialArgs;
   modules = 
     cfg.mod.nixos-modules

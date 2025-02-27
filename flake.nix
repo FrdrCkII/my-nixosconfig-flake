@@ -49,7 +49,7 @@
       inherit inputs;
     };
     system-gen = import ./cfg-lib/nixosSystem.nix {
-      inherit inputs cfg;
+      inherit inputs cfg lib;
     };
   in {
     nixosConfigurations = with cfg; {
