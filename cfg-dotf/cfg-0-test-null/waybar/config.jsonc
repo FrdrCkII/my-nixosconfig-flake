@@ -1,0 +1,78 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 6,
+  "spacing": 0,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "tray",
+    "network",
+    "pulseaudio",
+    "backlight",
+    "clock"
+  ],
+  "fixed-center": true,
+  "mod": "dock",
+
+  "hyprland/workspaces" : {
+    "on-click": "activate",
+    "active-only": false,
+    "warp-on-scroll": true,
+    "all-outputs": true,
+    "format": "{}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",		
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 6
+    }       
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "separate-outputs": true,
+    "rewrite": {
+      "(.*)~": " 󰚺 ",
+      "(.*)rofi - dmenu": " 󰅍 ",
+      "(.*) - mpv": "  ",
+      "(.*)musicfox":  "  ",
+      "(.*)Ranger": "  "
+    },
+    "max-length": 50
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 3
+  },
+  "network": {
+    "format-wifi": "{essid} ({signalStrength}%)",
+    "format-ethernet": "{ipaddr}/{cidr}",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "format-linked": "{ifname} (No IP)",
+    "format-disconnected": "无网络连接",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "pulseaudio": {
+    "format": "音量: {volume}%",
+    "format-muted": "静音",
+    "tooltip": false,
+    "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+  },
+  "backlight": {
+    "format": "亮度: {percent}%",
+    "scroll-step": 1
+  },
+  "clock": {
+    "format": "{:%Y/%m/%d %H:%M}"
+  }
+}
