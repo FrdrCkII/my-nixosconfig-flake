@@ -21,7 +21,7 @@
     ];
   };
 
-  # outputs = inputs: import ./flakes/output.nix inputs;
+  outputs = inputs: import ./cfg-host/output.nix inputs;
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -33,28 +33,6 @@
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-
-  outputs = {
-    self,
-    nixpkgs,
-    nixpkgs-stable,
-    nur,
-    home-manager,
-    ...
-  } @inputs: let
-    inherit (inputs.nixpkgs) lib;
-    cfg = import ./cfg-host {
-      inherit inputs;
-    };
-    system-gen = import ./cfg-lib/nixosSystem.nix {
-      inherit inputs cfg lib;
-    };
-  in {
-    nixosConfigurations = with cfg; {
-      "${test.hostname}" = system-gen { cfg = test; };
-      "${MyNixOSPC.hostname}" = system-gen { cfg = MyNixOSPC; };
     };
   };
 }
