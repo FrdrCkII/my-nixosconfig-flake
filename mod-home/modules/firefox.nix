@@ -3,7 +3,7 @@
       url = https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz;
   };
 in {
-  nixpkgs.overlays = [ (import "${mozilla-overlays}") ];
+  nixpkgs.overlays = [ (import "${mozilla-overlays}/firefox-overlay.nix") ];
   xdg.configFile."nixpkgs/config.nix".source = mozilla-overlays;
   programs.firefox = {
     enable = true;
