@@ -23,9 +23,6 @@
         "network.trr.mode" = 5;
         "dom.security.https_first" = true;
       };
-      extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
-        firefoxPackages.zh-cn
-      ];
       search = {
         default = "cnbing";
         force = true;
