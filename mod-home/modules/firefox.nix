@@ -3,7 +3,7 @@
 {
   programs.firefox = {
     enable = true;
-    languagePacks = [ "zh-CN" ];
+    languagePacks = [ "zh-cn" ];
     package = inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin;
   };
 }
