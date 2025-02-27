@@ -5,10 +5,6 @@
     enable = true;
     package = inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin;
 
-    extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-      pkgs.firefoxPackages.zh-cn
-    ];
-
     policies = {
       DisablePocket = true;
       DisplayBookmarksToolbar = true;
@@ -27,6 +23,9 @@
         "network.trr.mode" = 5;
         "dom.security.https_first" = true;
       };
+      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        pkgs.firefoxPackages.zh-cn
+      ];
       search = {
         default = "cnbing";
         force = true;
