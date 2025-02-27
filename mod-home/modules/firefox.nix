@@ -24,7 +24,7 @@
         "dom.security.https_first" = true;
       };
       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-        pkgs.firefoxPackages.zh-cn
+        firefoxPackages.zh-cn
       ];
       search = {
         default = "cnbing";
