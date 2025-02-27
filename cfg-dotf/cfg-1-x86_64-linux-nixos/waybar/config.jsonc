@@ -69,8 +69,11 @@
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
   "backlight": {
+	  "device": "intel_backlight",
     "format": "亮度: {percent}%",
-    "scroll-step": 1
+    "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
   "clock": {
     "format": "{:%Y/%m/%d %H:%M}"
