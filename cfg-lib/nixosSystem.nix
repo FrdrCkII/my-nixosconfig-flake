@@ -6,10 +6,12 @@
   specialArgs = {
     inherit inputs cfg;
   };
+  nur-modules = with nur.legacyPackages."${system}"; [
+  ]
+  ++ cfg.mod.nur-modules;
 in 
 nixpkgs.lib.nixosSystem {
   inherit system specialArgs;
-  
   modules = 
     cfg.mod.nixos-modules
     ++ ( lib.optionals ( ( lib.lists.length cfg.mod.home-modules ) > 0 ) [
@@ -21,7 +23,10 @@ nixpkgs.lib.nixosSystem {
         home-manager.users."${cfg.opt.username}".imports = cfg.mod.home-modules;
       }
     ])
-    ++ [
-      { nixpkgs.overlays.default = [ nur.overlay ]; }
-    ];
+    ++ ( lib.optionals ( ( lib.lists.length cfg.mod.nur-modules ) > 0 )
+      [
+        nur.modules.nixos.default
+      ]
+      ++ nur-modules
+    );
 }
