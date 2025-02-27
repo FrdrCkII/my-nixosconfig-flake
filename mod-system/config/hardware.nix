@@ -8,7 +8,7 @@
     };
     i2c = {
       enable = true;
-      group = [ "${cfg.opt.username}" ];
+      group = "wheel";
     };
   };
   services.pipewire = {
