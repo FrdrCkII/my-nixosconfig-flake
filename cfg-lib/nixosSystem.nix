@@ -23,10 +23,8 @@ nixpkgs.lib.nixosSystem {
         home-manager.users."${cfg.opt.username}".imports = cfg.mod.home-modules;
       }
     ])
-    ++ ( lib.optionals ( ( lib.lists.length cfg.mod.nur-modules ) > 0 )
-      [
-        inputs.nur.modules.nixos.default
-      ]
-      ++ nur-modules
-    );
+    ++ [
+      nur.modules.nixos.default
+      nur.legacyPackages."${system}".repos.iopq.modules.xraya
+    ];
 }

@@ -8,12 +8,14 @@
     pkg = import ./${configname}/pkgs.nix {
       inherit system inputs;
     };
-    mod = ( import ./${configname}/modules.nix ).modules;
     opt = ( import ./${configname}/options.nix {
       pkgs = pkg.unstable-pkgs;
       stable-pkgs = pkg.stable-pkgs;
       nur = pkg.nur;
     }).options;
+    mod = ( import ./${configname}/modules.nix {
+      inherit system inputs;
+    }).modules;
   };
 
   MyNixOSPC = rec {
@@ -23,11 +25,13 @@
     pkg = import ./${configname}/pkgs.nix {
       inherit system inputs;
     };
-    mod = ( import ./${configname}/modules.nix ).modules;
     opt = ( import ./${configname}/options.nix {
       pkgs = pkg.unstable-pkgs;
       stable-pkgs = pkg.stable-pkgs;
       nur = pkg.nur;
     }).options;
+    mod = ( import ./${configname}/modules.nix {
+      inherit system inputs;
+    }).modules;
   };
 }

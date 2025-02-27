@@ -1,3 +1,5 @@
+{ system, inputs }:
+
 {
   modules = rec {
     nixos-modules = [
