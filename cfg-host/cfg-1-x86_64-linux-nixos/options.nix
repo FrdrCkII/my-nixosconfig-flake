@@ -30,6 +30,7 @@
       openssl
       libGL
       xorg.libX11
+      icu
     ];
 
     HomeManagerVersion = "25.05";
