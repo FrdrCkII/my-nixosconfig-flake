@@ -1,21 +1,26 @@
 { config, lib, pkgs, cfg, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    ddcutil
+  ];
   services.displayManager.ly.enable = true;
   services.gnome.gnome-keyring.enable = true;
   programs = {
     hyprlock.enable = true;
     hyprland = {
       enable = true;
-      withUWSM = false;
+      withUWSM = true;
+    };
+    uwsm = {
+      enable = true;
+      waylandCompositors = {
+        hyprland = {
+          prettyName = "Hyprland";
+          comment = "Hyprland compositor managed by UWSM";
+          binPath = "/run/current-system/sw/bin/Hyprland";
+        };
+      };
     };
   };
-  environment.systemPackages = with pkgs; [
-    ddcutil
-  ];
-  # boot.kernelModules = [ "i2c-dev" ];
-  # services.udev.extraRules = ''
-  #   KERNEL=="i2c-[0-9]*", GROUP="i2c", MODE="0660"
-  # '';
-  # users.users.${cfg.opt.username}.extraGroups = [ "i2c" ];
 }
