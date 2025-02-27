@@ -13,7 +13,7 @@
     "tray",
     "network",
     "pulseaudio",
-    "backlight",
+    "brightness",
     "clock"
   ],
   "fixed-center": true,
@@ -68,11 +68,12 @@
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
-  "backlight": {
-	  "device": "amdgpu_bl0",
-    "format": "亮度: {percent}%",
-    "on-scroll-up": "brightnessctl set 5%+",
-    "on-scroll-down": "brightnessctl set 5%-"
+  "custom/brightness": {
+    "format": "亮度: {}%",
+    "exec": "ddcutil getvcp 10 | awk '{print $4}' | sed 's/$/%/'",
+    "interval": 5,
+    "on-scroll-up": "./scripts/brightness_control.sh up",
+    "on-scroll-down": "./scripts/brightness_control.sh down"
   },
   "clock": {
     "format": "{:%Y/%m/%d %H:%M}"
