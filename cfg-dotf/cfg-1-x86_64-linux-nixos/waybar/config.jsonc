@@ -13,7 +13,6 @@
     "tray",
     "network",
     "pulseaudio",
-    "custom/brightness",
     "clock"
   ],
   "fixed-center": true,
@@ -67,13 +66,6 @@
     "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-  },
-  "custom/brightness": {
-    "format": "亮度: {}%",
-    "exec": "echo $(( $(cat /sys/class/backlight/amdgpu_bl0/brightness) * 100 / $(cat /sys/class/backlight/amdgpu_bl0/max_brightness) ))",
-    "interval": 2,
-    "on-click": "bash $HOME/.config/waybar/scripts/brightness_control.sh up",
-    "on-click-right": "bash $HOME/.config/waybar/scripts/brightness_control.sh down"
   },
   "clock": {
     "format": "{:%Y/%m/%d %H:%M}"
