@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; {
+  environment.systemPackages = with pkgs; [
     brightnessctl
-  };
+  ]
   services.displayManager.ly.enable = true;
   services.gnome.gnome-keyring.enable = true;
   programs = {
