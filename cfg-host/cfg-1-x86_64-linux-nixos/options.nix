@@ -40,7 +40,6 @@
       ffmpeg
       gimp
 
-      microsoft-edge
       motrix
       
       wechat-uos
