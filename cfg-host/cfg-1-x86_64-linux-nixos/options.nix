@@ -42,6 +42,10 @@
       ffmpeg gimp
       motrix
       wine-staging
+      winePackages.fonts
+      wine64Packages.fonts
+      wineWowPackages.fonts
+      wineWow64Packages.fonts
       prismlauncher
       wechat-uos qq
     ];
