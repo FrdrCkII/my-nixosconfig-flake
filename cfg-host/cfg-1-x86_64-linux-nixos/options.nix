@@ -39,15 +39,11 @@
     HomeManagerVersion = "25.05";
     HomePackages = with pkgs; [
       libreoffice
-      ffmpeg
-      gimp
-
+      ffmpeg gimp
       motrix
-      
-      wechat-uos
-      qq
-      
+      wine
       prismlauncher
+      wechat-uos qq
     ];
   };
 }
