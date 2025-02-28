@@ -13,8 +13,8 @@ rec {
 
     "p7zip-rar"
     "p7zip"
-    "microsoft-edge"
     "vscode"
+    "tampermonkey"
     
     "wechat-uos"
     "dingtalk"
