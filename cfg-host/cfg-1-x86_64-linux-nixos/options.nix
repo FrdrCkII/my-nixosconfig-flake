@@ -41,7 +41,7 @@
       libreoffice
       ffmpeg gimp
       motrix
-      wine
+      wine-staging
       prismlauncher
       wechat-uos qq
     ];
