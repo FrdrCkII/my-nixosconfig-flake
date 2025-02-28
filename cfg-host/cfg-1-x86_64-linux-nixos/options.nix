@@ -13,7 +13,6 @@
     desktop = [
       "hyprland"
       "kde"
-      "xfce"
     ];
 
     SystemVersion = "25.05";
