@@ -27,6 +27,9 @@
   ]
   ++ lib.optionals (builtins.elem "xfce" cfg.opt.desktop) [
     ./desktop/xfce.nix
+  ]
+  ++ lib.optionals (builtins.elem "xfce-hypr" cfg.opt.desktop) [
+    ./desktop/xfce-hypr.nix
   ];
 in {
   imports = system-modules;
