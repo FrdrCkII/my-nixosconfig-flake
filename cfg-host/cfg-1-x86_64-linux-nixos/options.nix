@@ -28,6 +28,7 @@
     NixldLibs = with pkgs; [
       glibc
       zlib
+      libz
       openssl
       libGL
       xorg.libX11
