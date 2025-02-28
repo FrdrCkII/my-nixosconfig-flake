@@ -1,10 +1,4 @@
-{
-  config, lib, pkgs,
-  allowed-unfree-packages,
-  allowed-insecure-packages,
-  cfg,
-  ...
-}: let 
+{ config, lib, pkgs, cfg, ... }: let 
   system-modules = with pkgs; [
     ./config/boot.nix
     ./config/hardware.nix
