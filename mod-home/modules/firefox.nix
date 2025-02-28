@@ -29,7 +29,6 @@
           aria2-integration
           tampermonkey
           darkreader
-          nicothin-space
         ];
       };
       search = {
