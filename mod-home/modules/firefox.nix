@@ -26,8 +26,10 @@
       extensions = {
         packages = with pkgs.nur.repos.rycee.firefox-addons; [
           localcdn
-          darkreader
           aria2-integration
+          tampermonkey
+          darkreader
+          nicothin-space
         ];
       };
       search = {
