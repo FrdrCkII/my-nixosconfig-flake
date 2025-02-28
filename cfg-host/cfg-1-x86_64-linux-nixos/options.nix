@@ -11,7 +11,8 @@
       "amd"
     ];
     desktop = [
-      "hyprland"
+      "kde"
+      "xfce-hypr"
     ];
 
     SystemVersion = "25.05";
