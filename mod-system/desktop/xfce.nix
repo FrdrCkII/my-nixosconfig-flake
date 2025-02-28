@@ -14,8 +14,12 @@
       enableScreensaver = false;
     };
   };
-  environment.xfce.excludePackages = with pkgs.xfce; [
-    xfce4-terminal
-    mousepad
+  programs = {
+    xfconf.enable = true;
+  };
+  environment.xfce.excludePackages = with pkgs; [
+    xfce.mousepad
+    xfce.thunar
+    xterm
   ];
 }
