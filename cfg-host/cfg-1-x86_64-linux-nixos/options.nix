@@ -40,6 +40,7 @@
     HomePackages = with pkgs; [
       libreoffice
       ffmpeg gimp
+      brave
       motrix
       wine-staging
       winePackages.fonts
