@@ -18,7 +18,6 @@
   };
   security.pki.certificateFiles = [
     /home/${cfg.opt.username}/tools/SteamDeck_302/steamcommunityCA.pem
-    /home/${cfg.opt.username}/tools/steamcommunity_302_V12.1.30/SteamDeck_302/steamcommunityCA.pem
   ];
   networking.extraHosts = ''
 127.0.0.1 steamcommunity.com
@@ -41,14 +40,13 @@
 127.0.0.1 community.steamstatic.com
 127.0.0.1 cdn.akamai.steamstatic.com
 127.0.0.1 avatars.steamstatic.com
-127.0.0.1 shared.akamai.steamstatic.com
-127.0.0.1 clan.akamai.steamstatic.com
 127.0.0.1 cdn.cloudflare.steamstatic.com
 127.0.0.1 community.cloudflare.steamstatic.com
 127.0.0.1 store.cloudflare.steamstatic.com
+127.0.0.1 video.cloudflare.steamstatic.com
 127.0.0.1 avatars.cloudflare.steamstatic.com
+127.0.0.1 dfs.cloudflare.steamstatic.com
 127.0.0.1 clan.cloudflare.steamstatic.com
-127.0.0.1 shared.cloudflare.steamstatic.com
 127.0.0.1 www.google.com
 127.0.0.1 steam-chat.com
 127.0.0.1 github.com
@@ -64,16 +62,13 @@
 127.0.0.1 avatars1.githubusercontent.com
 127.0.0.1 avatars2.githubusercontent.com
 127.0.0.1 avatars3.githubusercontent.com
-127.0.0.1 private-user-images.githubusercontent.com
 127.0.0.1 user-images.githubusercontent.com
 127.0.0.1 github-releases.githubusercontent.com
-127.0.0.1 objects.githubusercontent.com
-127.0.0.1 analytics.githubassets.com
 127.0.0.1 assets-cdn.github.com
 127.0.0.1 github.githubassets.com
-127.0.0.1 support-assets.githubassets.com
 127.0.0.1 codeload.github.com
 127.0.0.1 pages.github.com
+127.0.0.1 help.github.com
 127.0.0.1 docs.github.com
 127.0.0.1 services.github.com
 127.0.0.1 resources.github.com
@@ -92,69 +87,8 @@
 127.0.0.1 github.io
 127.0.0.1 www.github.io
 127.0.0.1 *.github.io #[Please change the prefix to support github.io]
-127.0.0.1 store-images.s-microsoft.com
-127.0.0.1 images-eds.xboxlive.com
-127.0.0.1 static.wikia.nocookie.net
-127.0.0.1 img.wikia.nocookie.net
-127.0.0.1 img1.wikia.nocookie.net
-127.0.0.1 img2.wikia.nocookie.net
-127.0.0.1 img3.wikia.nocookie.net
-127.0.0.1 img4.wikia.nocookie.net
-127.0.0.1 img5.wikia.nocookie.net
-127.0.0.1 images.wikia.nocookie.net
-127.0.0.1 images1.wikia.nocookie.net
-127.0.0.1 images2.wikia.nocookie.net
-127.0.0.1 images3.wikia.nocookie.net
-127.0.0.1 images4.wikia.nocookie.net
-127.0.0.1 images5.wikia.nocookie.net
-127.0.0.1 vignette.wikia.nocookie.net
-127.0.0.1 vignette1.wikia.nocookie.net
-127.0.0.1 vignette2.wikia.nocookie.net
-127.0.0.1 vignette3.wikia.nocookie.net
-127.0.0.1 vignette4.wikia.nocookie.net
-127.0.0.1 vignette5.wikia.nocookie.net
 127.0.0.1 steamcloud-ugc.storage.googleapis.com
-127.0.0.1 cdn.jsdelivr.net
 127.0.0.1 www.youtube.com
-127.0.0.1 xgpuweb.gssv-play-prod.xboxlive.com
-127.0.0.1 xsts.auth.xboxlive.com
-127.0.0.1 xgpuwebf2p.gssv-play-prod.xboxlive.com
-127.0.0.1 xhome.gssv-play-prod.xboxlive.com
-127.0.0.1 steamcloud-eu-ams.storage.googleapis.com
-127.0.0.1 steamcloud-eu-fra.storage.googleapis.com
-127.0.0.1 steamcloud-finland.storage.googleapis.com
-127.0.0.1 steamcloud-saopaulo.storage.googleapis.com
-127.0.0.1 steamcloud-singapore.storage.googleapis.com
-127.0.0.1 steamcloud-sydney.storage.googleapis.com
-127.0.0.1 steamcloud-taiwan.storage.googleapis.com
-127.0.0.1 steamcloud-eu.storage.googleapis.com
-127.0.0.1 ajax.googleapis.com
-127.0.0.1 assets1.xboxlive.com
-127.0.0.1 assets2.xboxlive.com
-127.0.0.1 xvcf1.xboxlive.com
-127.0.0.1 xvcf2.xboxlive.com
-127.0.0.1 download.epicgames.com
-127.0.0.1 download2.epicgames.com
-127.0.0.1 download3.epicgames.com
-127.0.0.1 download4.epicgames.com
-127.0.0.1 epicgames-download1.akamaized.net
-127.0.0.1 fastly-download.epicgames.com
-127.0.0.1 mega.io
-127.0.0.1 www.mega.io
-127.0.0.1 blog.mega.io
-127.0.0.1 help.mega.io
-127.0.0.1 transparency.mega.io
-127.0.0.1 mega.nz
-127.0.0.1 help.mega.nz
-127.0.0.1 g.api.mega.co.nz
-127.0.0.1 eu.api.mega.co.nz
-127.0.0.1 store.st.dl.eccdnx.com
-127.0.0.1 media.st.dl.eccdnx.com
-127.0.0.1 avatars.st.dl.eccdnx.com
-127.0.0.1 clan.st.dl.eccdnx.com
-127.0.0.1 video.st.dl.eccdnx.com
-127.0.0.1 shared.st.dl.eccdnx.com
-
 127.0.0.1 pixiv.net
 127.0.0.1 www.pixiv.net
 127.0.0.1 fanbox.cc
