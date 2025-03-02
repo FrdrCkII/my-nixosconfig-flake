@@ -46,6 +46,7 @@
       wine64Packages.fonts
       wineWowPackages.fonts
       wineWow64Packages.fonts
+      winetricks
       prismlauncher
       wechat-uos qq
     ];
