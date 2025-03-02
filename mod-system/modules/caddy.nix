@@ -18,6 +18,7 @@
   };
   security.pki.certificateFiles = [
     /home/${cfg.opt.username}/tools/SteamDeck_302/steamcommunityCA.pem
+    /home/${cfg.opt.username}/tools/steamcommunity_302_V12.1.30/SteamDeck_302/steamcommunityCA.pem
   ];
   networking.extraHosts = ''
 127.0.0.1 steamcommunity.com
