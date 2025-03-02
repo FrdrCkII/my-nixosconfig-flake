@@ -44,6 +44,7 @@
           '';
         };
       };
+    };
   };
   networking.extraHosts = ''
   
