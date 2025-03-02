@@ -7,7 +7,7 @@
       ../../mod-system
       ../../mod-system/modules/caddy.nix
       ../../mod-system/modules/clash.nix
-      ../../mod-system/modules/nginx.nix
+      # ../../mod-system/modules/nginx.nix
       ../../mod-system/modules/nix-ld.nix
       ../../mod-system/modules/steam.nix
     ];

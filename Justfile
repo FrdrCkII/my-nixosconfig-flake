@@ -28,3 +28,10 @@ ttg host:
     git add *
     git commit -m "update"
     sudo nixos-rebuild test --impure --flake .#{{host}}
+
+ca ca:
+    openssl genrsa -out cakey.key 2048
+    openssl req -new -x509 -key cakey.key -out cacert.crt -days 3650 
+    openssl genrsa -out {{ca}}.key 2048
+    openssl req -new -key {{ca}}.key -out {{ca}}.csr
+    openssl x509 -req -CA cacert.crt -CAkey cakey.key -CAcreateserial -extfile v3.ext -in {{ca}}.csr -out {{ca}}.crt -days 3650

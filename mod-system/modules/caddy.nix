@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    caddy nssTools dig
+    caddy openssl nssTools dig
   ];
   # systemd.services = {
   #   caddy = {
