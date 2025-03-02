@@ -11,6 +11,6 @@
   };
   networking.extraHosts = ''
 36.152.44.93  www.baidu.com  bd.c
-65.49.68.152 *pixiv.net pi.cn
+65.49.68.152  *pixiv.net  pi.cn
   '';
 }
