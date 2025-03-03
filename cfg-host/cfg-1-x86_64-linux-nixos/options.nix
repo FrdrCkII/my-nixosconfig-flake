@@ -20,6 +20,7 @@
     KernelPackages = pkgs.linuxPackages_zen;
     SystemPackages = with pkgs; [
       btrfs-assistant
+      snapper
       p7zip-rar
       fastfetch
       nix-tree
