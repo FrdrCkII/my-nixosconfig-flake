@@ -5,7 +5,7 @@
     nixos-modules = [
       ./system
       ../../mod-system
-      ../../mod-system/config/boot.nix
+      # ../../mod-system/config/boot.nix
       ../../mod-system/config/boot.systemd-boot.nix
       ../../mod-system/config/hardware.nix
       ../../mod-system/config/i18n.nix
