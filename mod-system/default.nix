@@ -1,9 +1,5 @@
 { config, lib, pkgs, cfg, ... }: let 
   system-modules = with pkgs; [
-    ./config/boot.nix
-    ./config/hardware.nix
-    ./config/i18n.nix
-    ./config/nix.nix
     ./options.nix
     ./packages.nix
   ]

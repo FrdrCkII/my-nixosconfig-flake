@@ -5,6 +5,11 @@
     nixos-modules = [
       ./system
       ../../mod-system
+      # ../../config/boot.nix
+      ../../config/boot.systemd-boot.nix
+      ../../config/hardware.nix
+      ../../config/i18n.nix
+      ../../config/nix.nix
       # ../../mod-system/modules/caddy.nix
       ../../mod-system/modules/caddy.old.nix
       ../../mod-system/modules/clash.nix
