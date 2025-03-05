@@ -10,7 +10,7 @@
   ]
   ++ cfg.mod.nur-modules;
 in 
-home-manager.lib.homeManagerConfiguration {
+inputs.home-manager.lib.homeManagerConfiguration {
   inherit system specialArgs;
   modules = 
     cfg.mod.home-modules
