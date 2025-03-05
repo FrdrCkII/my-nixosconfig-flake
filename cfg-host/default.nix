@@ -36,7 +36,7 @@
   };
 
   ArchPC = rec {
-    hostname = "F=ma";
+    # hostname = "";
     configname = "cfg-2-x86_64-linux-arch";
     system = "x86_64-linux";
     pkg = import ./${configname}/pkgs.nix {
