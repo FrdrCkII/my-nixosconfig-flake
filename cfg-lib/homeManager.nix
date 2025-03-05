@@ -11,7 +11,7 @@
   ++ cfg.mod.nur-modules;
 in 
 home-manager.lib.homeManagerConfiguration {
-  inherit system extraSpecialArgs;
+  inherit extraSpecialArgs;
   pkgs = cfg.pkg.unstable-pkgs;
   modules = 
     cfg.mod.home-modules
