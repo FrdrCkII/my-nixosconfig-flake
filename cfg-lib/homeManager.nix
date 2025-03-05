@@ -15,8 +15,4 @@ home-manager.lib.homeManagerConfiguration {
   pkgs = cfg.pkg.unstable-pkgs;
   modules = 
     cfg.mod.home-modules
-    ++ [
-      inputs.nur.modules.nixos.default
-      inputs.nur.legacyPackages."${system}".repos.iopq.modules.xraya
-    ];
 }
