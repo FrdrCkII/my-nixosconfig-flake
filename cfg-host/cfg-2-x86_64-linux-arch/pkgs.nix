@@ -2,20 +2,6 @@
 
 rec {
   allowed-unfree-packages = pkg: builtins.elem (inputs.nixpkgs.lib.getName pkg) [
-    "nvidia-x11"
-    "nvidia-settings"
-    "nvidia-persistenced"
-    "amdgpu-pro"
-
-    "xow_dongle-firmware"
-    "steam-unwrapped"
-    "steam"
-
-    "p7zip-rar"
-    "p7zip"
-    "vscode"
-    "tampermonkey"
-    
     "wechat-uos"
     "dingtalk"
     "qq"

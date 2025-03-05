@@ -1,8 +1,7 @@
-{ inputs, lib, cfg }:
+{ inputs, lib, cfg, pkgs }:
 { cfg }: let
   inherit cfg;
   inherit (inputs) nixpkgs home-manager;
-  pkgs = inputs.nixpkgs;
   system = cfg.system;
   specialArgs = {
     inherit inputs cfg;
