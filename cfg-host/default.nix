@@ -45,7 +45,6 @@
     opt = ( import ./${configname}/options.nix {
       pkgs = pkg.unstable-pkgs;
       stable-pkgs = pkg.stable-pkgs;
-      nur = pkg.nur;
     }).options;
     mod = ( import ./${configname}/modules.nix {
       inherit system inputs;

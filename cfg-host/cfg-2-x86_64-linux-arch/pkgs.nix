@@ -12,12 +12,10 @@ rec {
     inherit system;
     config.allowUnfreePredicate = allowed-unfree-packages;
     config.permittedInsecurePackages = allowed-insecure-packages;
-    # overlays.default = [ inputs.nur.overlay ];
   };
   unstable-pkgs = import inputs.nixpkgs {
     inherit system;
     config.allowUnfreePredicate = allowed-unfree-packages;
     config.permittedInsecurePackages = allowed-insecure-packages;
-    # overlays.default = [ inputs.nur.overlay ];
   };
 }
