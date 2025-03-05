@@ -13,6 +13,8 @@ up:
     git add flake.lock
     git commit -m "flake update"
 
+# nixos
+
 bd host:
     sudo nixos-rebuild switch --impure --flake .#{{host}}
 
@@ -28,3 +30,22 @@ ttg host:
     git add *
     git commit -m "update"
     sudo nixos-rebuild test --impure --flake .#{{host}}
+
+# home manager
+
+
+hbd host:
+    home-manager switch --impure --flake .#{{host}}
+
+htt host:
+    home-manager test --impure --flake .#{{host}}
+
+hbdg host:
+    git add *
+    git commit -m "update"
+    home-manager switch --impure --flake .#{{host}}
+
+httg host:
+    git add *
+    git commit -m "update"
+    home-manager test --impure --flake .#{{host}}
