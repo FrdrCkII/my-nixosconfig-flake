@@ -16,8 +16,6 @@
   ];
 in {
   imports = home-modules;
-
-  targets.genericLinux.enable = true;
   programs.home-manager.enable = true;
   home = {
     username = cfg.opt.username;

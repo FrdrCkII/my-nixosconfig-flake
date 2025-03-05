@@ -19,6 +19,7 @@
 
     HomeManagerVersion = "25.05";
     HomePackages = with pkgs; [
+      fastfetch
       wechat-uos qq
       ffmpeg gimp
       libreoffice
