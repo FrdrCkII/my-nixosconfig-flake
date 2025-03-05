@@ -2,9 +2,9 @@
 
 {
   nixos = import ./nixosSystem.nix {
-    inherit inputs cfg;
+    inherit inputs lib cfg;
   };
   home-manager = import ./homeManager.nix {
-    inherit inputs cfg;
+    inherit inputs lib cfg;
   };
 }
