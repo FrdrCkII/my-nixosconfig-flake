@@ -17,15 +17,11 @@
     inherit inputs lib cfg;
   };
 in {
+  # nixosConfigurations = with cfg; {
+  #   "${test.hostname}" = nixos { cfg = test; };
+  #   "${NixOSPC.hostname}" = nixos { cfg = NixOSPC; };
+  # };
+  homeConfigurations = with cfg; {
+    "${ArchPC.hostname}" = home-manager { cfg = ArchPC; };
+  };
 }
-  ++ ( lib.optionals cfg.opt.is-nixos {
-    nixosConfigurations = with cfg; {
-      "${test.hostname}" = nixos { cfg = test; };
-      "${NixOSPC.hostname}" = nixos { cfg = NixOSPC; };
-    };
-  })
-  ++ ( lib.optionals cfg.opt.is-otherlinux {
-    homeConfigurations = with cfg; {
-      "${ArchPC.hostname}" = home-manager { cfg = ArchPC; };
-    };
-  })
