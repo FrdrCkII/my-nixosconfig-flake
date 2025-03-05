@@ -1,5 +1,6 @@
 { config, pkgs, lib, cfg, ... }: let 
   home-modules = with pkgs; [
+    ./options.nix
     ./packages.nix
   ]
   ++ lib.optionals (builtins.elem "hyprland" cfg.opt.desktop) [
