@@ -16,9 +16,9 @@
 in {
   nixosConfigurations = with cfg; {
     "${test.hostname}" = system-gen.nixos { cfg = test; };
-    "${MyNixOSPC.hostname}" = system-gen.nixos { cfg = MyNixOSPC; };
+    "${NixOSPC.hostname}" = system-gen.nixos { cfg = NixOSPC; };
   };
   homeConfigurations = with cfg; {
-    "${MyArchPC.hostname}" = system-gen.home-manager { cfg = MyArchPC; };
+    "${ArchPC.hostname}" = system-gen.home-manager { cfg = ArchPC; };
   };
 }

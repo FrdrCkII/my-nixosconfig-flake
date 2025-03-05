@@ -18,7 +18,7 @@
     }).modules;
   };
 
-  MyNixOSPC = rec {
+  NixOSPC = rec {
     hostname = "c2h5oc2h4";
     configname = "cfg-1-x86_64-linux-nixos";
     system = "x86_64-linux";
@@ -35,7 +35,7 @@
     }).modules;
   };
 
-  MyArchPC = rec {
+  ArchPC = rec {
     hostname = "F=ma";
     configname = "cfg-2-x86_64-linux-arch";
     system = "x86_64-linux";
