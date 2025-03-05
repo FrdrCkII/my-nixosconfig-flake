@@ -18,10 +18,5 @@ home-manager.lib.homeManagerConfiguration {
     ++ [
       inputs.nur.modules.nixos.default
       inputs.nur.legacyPackages."${system}".repos.iopq.modules.xraya
-    ]
-    ++ [(
-      { pkgs, ...}: {
-        targets.genericLinux.enable = true;
-      }
-    )];
+    ];
 }

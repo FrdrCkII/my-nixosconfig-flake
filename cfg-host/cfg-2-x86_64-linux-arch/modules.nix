@@ -3,7 +3,7 @@
 {
   modules = rec {
     home-modules = [
-      ../../mod-home
+      ../../mod-home/standalone.nix
       ../../mod-home/modules/aria2.nix
       ../../mod-home/modules/just.nix
       ../../mod-home/modules/kitty.nix
