@@ -19,7 +19,6 @@
       wechat-uos qq
       ffmpeg gimp
       libreoffice
-      motrix
       prismlauncher
     ];
   };
