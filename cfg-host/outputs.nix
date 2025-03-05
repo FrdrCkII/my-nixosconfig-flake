@@ -19,6 +19,6 @@ in {
     "${MyNixOSPC.hostname}" = system-gen.nixos { cfg = MyNixOSPC; };
   };
   homeConfigurations = with cfg; {
-    "${MyArchPC.opt.username}" = system-gen.home-manager { cfg = MyArchPC; };
+    "${MyArchPC.hostname}" = system-gen.home-manager { cfg = MyArchPC; };
   };
 }
