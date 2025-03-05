@@ -12,7 +12,6 @@
   };
   system-gen = import ../cfg-lib {
     inherit inputs cfg lib;
-    pkgs = cfg.pkg.unstable-pkgs;
   };
 in {
   nixosConfigurations = with cfg; {

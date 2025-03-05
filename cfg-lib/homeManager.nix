@@ -1,4 +1,4 @@
-{ inputs, lib, cfg, pkgs }:
+{ inputs, lib, cfg }:
 { cfg }: let
   inherit cfg;
   inherit (inputs) nixpkgs home-manager;
@@ -11,7 +11,8 @@
   ++ cfg.mod.nur-modules;
 in 
 home-manager.lib.homeManagerConfiguration {
-  inherit system extraSpecialArgs pkgs;
+  inherit system extraSpecialArgs;
+  pkgs = cfg.pkg.unstable-pkgs;
   modules = 
     cfg.mod.home-modules
     ++ [
