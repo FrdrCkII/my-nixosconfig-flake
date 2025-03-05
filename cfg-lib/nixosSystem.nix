@@ -14,10 +14,6 @@ nixpkgs.lib.nixosSystem {
   inherit system specialArgs;
   modules = 
     cfg.mod.nixos-modules
-    ++ [
-      inputs.nur.modules.nixos.default
-      inputs.nur.legacyPackages."${system}".repos.iopq.modules.xraya
-    ]
     ++ ( lib.optionals ( ( lib.lists.length cfg.mod.home-modules ) > 0 ) [
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
