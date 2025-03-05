@@ -10,9 +10,9 @@
   cfg = import ../cfg-host {
     inherit inputs;
   };
+  pkgs = cfg.pkg.unstable-pkgs;
   system-gen = import ../cfg-lib {
-    inherit inputs cfg lib;
-    pkgs = cfg.pkg.unstable-pkgs;
+    inherit inputs cfg lib pkgs;
   };
 in {
   nixosConfigurations = with cfg; {
