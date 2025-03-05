@@ -3,7 +3,7 @@
   inherit cfg;
   inherit (inputs) nixpkgs home-manager;
   system = cfg.system;
-  specialArgs = {
+  extraSpecialArgs = {
     inherit inputs cfg;
   };
   nur-modules = with inputs.nur.legacyPackages."${system}"; [
@@ -11,7 +11,7 @@
   ++ cfg.mod.nur-modules;
 in 
 home-manager.lib.homeManagerConfiguration {
-  inherit system specialArgs;
+  inherit system extraSpecialArgs pkgs;
   modules = 
     cfg.mod.home-modules
     ++ [
