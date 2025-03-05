@@ -33,18 +33,19 @@ ttg host:
 
 # home manager
 
+
 hbd host:
-    sudo home-manager switch --impure --flake .#{{host}}
+    home-manager switch --impure --flake .#{{host}}
 
 htt host:
-    sudo home-manager test --impure --flake .#{{host}}
+    home-manager test --impure --flake .#{{host}}
 
 hbdg host:
     git add *
     git commit -m "update"
-    sudo home-manager switch --impure --flake .#{{host}}
+    home-manager switch --impure --flake .#{{host}}
 
 httg host:
     git add *
     git commit -m "update"
-    sudo home-manager test --impure --flake .#{{host}}
+    home-manager test --impure --flake .#{{host}}
