@@ -10,15 +10,18 @@
   cfg = import ../cfg-host {
     inherit inputs;
   };
-  system-gen = import ../cfg-lib {
-    inherit inputs cfg lib;
+  nixos = import ../cfg-lib/nixosSystem.nix {
+    inherit inputs lib cfg;
+  };
+  home-manager = import ../cfg-lib/homeManager.nix {
+    inherit inputs lib cfg;
   };
 in {
   nixosConfigurations = with cfg; {
-    "${test.hostname}" = system-gen.nixos { cfg = test; };
-    "${NixOSPC.hostname}" = system-gen.nixos { cfg = NixOSPC; };
+    "${test.hostname}" = nixos { cfg = test; };
+    "${NixOSPC.hostname}" = nixos { cfg = NixOSPC; };
   };
   homeConfigurations = with cfg; {
-    "${ArchPC.hostname}" = system-gen.home-manager { cfg = ArchPC; };
+    "${ArchPC.hostname}" = home-manager { cfg = ArchPC; };
   };
 }
