@@ -1,4 +1,4 @@
-{ pkgs, stable-pkgs, ... }:
+{ pkgs, stable-pkgs, nur, ... }:
 
 {
   options = rec {
