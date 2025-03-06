@@ -11,6 +11,6 @@
   ++ cfg.mod.nur-modules;
 in 
 system-manager.lib.makeSystemConfig {
-  extraArgs = specialArgs;
+  extraArgsModule = specialArgs;
   modules = cfg.mod.sysytem-modules;
 }
