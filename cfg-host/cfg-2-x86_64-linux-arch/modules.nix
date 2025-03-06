@@ -4,7 +4,7 @@
   modules = rec {
     sysytem-modules = [
       ./system
-      # ../../mod-system-manager
+      ../../mod-system-manager
       # ../../mod-system-manager/config/boot.nix
       # ../../mod-system-manager/config/hardware.nix
       # ../../mod-system-manager/config/i18n.nix
