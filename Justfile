@@ -33,7 +33,6 @@ ttg host:
 
 # home manager
 
-
 hbd host:
     home-manager switch --impure --flake .#{{host}}
 
@@ -49,3 +48,21 @@ httg host:
     git add *
     git commit -m "update"
     home-manager test --impure --flake .#{{host}}
+
+# system manager
+
+sbd host:
+    system-manager switch --impure --flake .#{{host}}
+
+stt host:
+    system-manager test --impure --flake .#{{host}}
+
+sbdg host:
+    git add *
+    git commit -m "update"
+    system-manager switch --impure --flake .#{{host}}
+
+sttg host:
+    git add *
+    git commit -m "update"
+    system-manager test --impure --flake .#{{host}}
