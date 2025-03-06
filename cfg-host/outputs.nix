@@ -16,7 +16,7 @@
   home-manager = import ../cfg-lib/homeManager.nix {
     inherit inputs lib cfg;
   };
-  system-manager = import ../cfg-lib/systemManagernix {
+  system-manager = import ../cfg-lib/systemManager.nix {
     inherit inputs lib cfg;
   };
 in {
