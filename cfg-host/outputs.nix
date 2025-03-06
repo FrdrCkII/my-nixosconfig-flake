@@ -29,5 +29,5 @@ in {
   };
   systemConfigs= with cfg; {
     "${arch-system-pc.hostname}" = system-manager { cfg = arch-system-pc; };
-  }
+  };
 }
