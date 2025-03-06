@@ -4,5 +4,7 @@
   ]
   ++ cfg.opt.SystemPackages;
 in {
-  environment.systemPackages = system-packages;
+  config = {
+    environment.systemPackages = system-packages;
+  };
 }
