@@ -7,5 +7,5 @@ in {
   imports = system-modules;
   config = {
     system-manager.allowAnyDistro = true;
-  }
+  };
 }
