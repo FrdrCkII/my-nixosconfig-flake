@@ -9,7 +9,7 @@
     };
   };
   config = lib.mkMerge [
-    (lib.mkIf (cfg.opt.is-otherlinux) {
+    (lib.mkIf ( cfg.opt.is-otherlinux == true ) {
       targets.genericLinux.enable = true;
     })
   ];
