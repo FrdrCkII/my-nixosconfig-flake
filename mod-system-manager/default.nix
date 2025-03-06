@@ -6,6 +6,7 @@ in {
   imports = system-modules;
   config = {
     system-manager.allowAnyDistro = true;
-    nixpkgs.buildPlatform = "${cfg.system}";
+    nixpkgs.hostPlatform = "x86_64-linux";
+    # nixpkgs.buildPlatform = "${cfg.system}";
   };
 }
