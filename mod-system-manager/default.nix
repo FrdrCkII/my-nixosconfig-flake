@@ -7,5 +7,6 @@ in {
   imports = system-modules;
   config = {
     system-manager.allowAnyDistro = true;
+    nixpkgs.buildPlatform = cfg.system;
   };
 }
