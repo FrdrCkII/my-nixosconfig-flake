@@ -1,6 +1,6 @@
 {
   modules = rec {
-    nixos-modules = [
+    sysytem-modules = [
       
     ];
     home-modules = [

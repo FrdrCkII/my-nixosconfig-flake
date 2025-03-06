@@ -16,12 +16,18 @@
   home-manager = import ../cfg-lib/homeManager.nix {
     inherit inputs lib cfg;
   };
+  system-manager = import ../cfg-lib/systemManagernix {
+    inherit inputs lib cfg;
+  };
 in {
   nixosConfigurations = with cfg; {
     "${test.hostname}" = nixos { cfg = test; };
-    "${NixOSPC.hostname}" = nixos { cfg = NixOSPC; };
+    "${nixos-pc.hostname}" = nixos { cfg = nixos-pc; };
   };
   homeConfigurations = with cfg; {
-    "${ArchPC.hostname}" = home-manager { cfg = ArchPC; };
+    "${arch-home-pc.hostname}" = home-manager { cfg = arch-home-pc; };
   };
+  systemConfigs= with cfg; {
+    "${arch-system-pc.hostname}" = system-manager { cfg = arch-system-pc; };
+  }
 }

@@ -2,20 +2,20 @@
 
 {
   modules = rec {
-    nixos-modules = [
+    sysytem-modules = [
       ./system
-      ../../mod-system
-      ../../mod-system/config/boot.nix
-      # ../../mod-system/config/boot.systemd-boot.nix
-      ../../mod-system/config/hardware.nix
-      ../../mod-system/config/i18n.nix
-      ../../mod-system/config/nix.nix
-      # ../../mod-system/modules/caddy.nix
-      ../../mod-system/modules/caddy.old.nix
-      ../../mod-system/modules/clash.nix
-      # ../../mod-system/modules/nginx.nix
-      ../../mod-system/modules/nix-ld.nix
-      ../../mod-system/modules/steam.nix
+      ../../mod-nixos
+      ../../mod-nixos/config/boot.nix
+      # ../../mod-nixos/config/boot.systemd-boot.nix
+      ../../mod-nixos/config/hardware.nix
+      ../../mod-nixos/config/i18n.nix
+      ../../mod-nixos/config/nix.nix
+      # ../../mod-nixos/modules/caddy.nix
+      ../../mod-nixos/modules/caddy.old.nix
+      ../../mod-nixos/modules/clash.nix
+      # ../../mod-nixos/modules/nginx.nix
+      ../../mod-nixos/modules/nix-ld.nix
+      ../../mod-nixos/modules/steam.nix
     ];
     home-modules = [
       ../../mod-home

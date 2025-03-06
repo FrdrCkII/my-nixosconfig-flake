@@ -1,4 +1,4 @@
-{ system, inputs }:
+{ system, inputs, nur }:
 
 rec {
   allowed-unfree-packages = pkg: builtins.elem (inputs.nixpkgs.lib.getName pkg) [

@@ -1,7 +1,7 @@
 { inputs, lib, cfg }:
 { cfg }: let
   inherit cfg;
-  inherit (inputs) nixpkgs home-manager;
+  inherit (inputs) nixpkgs home-manager system-manager;
   system = cfg.system;
   specialArgs = {
     inherit inputs cfg;
@@ -10,7 +10,7 @@
   ]
   ++ cfg.mod.nur-modules;
 in 
-nixpkgs.lib.nixosSystem {
+system-manager.lib.makeSystemConfig {
   inherit system specialArgs;
   modules = 
     cfg.mod.sysytem-modules
