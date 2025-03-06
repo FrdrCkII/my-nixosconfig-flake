@@ -11,7 +11,7 @@
   ++ cfg.mod.nur-modules;
 in 
 system-manager.lib.makeSystemConfig {
-  # inherit system specialArgs;
+  inherit specialArgs;
   modules = 
     cfg.mod.sysytem-modules
     ++ [
