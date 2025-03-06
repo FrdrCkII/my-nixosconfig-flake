@@ -33,23 +33,29 @@ ttg host:
 
 # home manager
 
+ihm host:
+    sudo nix run '<home-manager>' -- switch --flake '.#{{host}}'
+
 hbd host:
-    home-manager switch --flake .#{{host}}
+    sudo home-manager switch --flake .#{{host}}
 
 htt host:
-    home-manager test --flake .#{{host}}
+    sudo home-manager test --flake .#{{host}}
 
 hbdg host:
     git add *
     git commit -m "update"
-    home-manager switch --flake .#{{host}}
+    sudo home-manager switch --flake .#{{host}}
 
 httg host:
     git add *
     git commit -m "update"
-    home-manager test --flake .#{{host}}
+    sudo home-manager test --flake .#{{host}}
 
 # system manager
+
+ism host:
+    sudo nix run 'github:numtide/system-manager' -- switch --flake '.#{{host}}'
 
 sbd host:
     sudo system-manager switch --flake .#{{host}}
