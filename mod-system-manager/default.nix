@@ -7,6 +7,9 @@ in {
   config = {
     system-manager.allowAnyDistro = true;
     nixpkgs.hostPlatform = "x86_64-linux";
-    # nixpkgs.buildPlatform = "${cfg.system}";
+    nixpkgs.config = {
+      allowUnfreePredicate = cfg.pkg.allowed-unfree-packages;
+      permittedInsecurePackages = cfg.pkg.allowed-insecure-packages;
+    };
   };
 }
