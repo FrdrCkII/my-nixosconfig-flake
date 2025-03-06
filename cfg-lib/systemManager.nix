@@ -11,7 +11,7 @@
   ++ cfg.mod.nur-modules;
 in 
 system-manager.lib.makeSystemConfig {
-  inherit specialArgs;
+  # inherit system specialArgs;
   modules = 
     cfg.mod.sysytem-modules
     ++ [
@@ -23,7 +23,7 @@ system-manager.lib.makeSystemConfig {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.backupFileExtension = "home-manager.backup";
-        home-manager.extraSpecialArgs = specialArgs;
+        # home-manager.extraSpecialArgs = specialArgs;
         home-manager.users."${cfg.opt.username}".imports = cfg.mod.home-modules;
       }
     ]);
