@@ -1,7 +1,5 @@
-cl:
-    nix profile wipe-history --profile /nix/var/nix/profiles/system
-    nix-collect-garbage --delete-old
-    nix-collect-garbage --delete-old
+
+
 
 cp:
     rm -rf /etc/nixos/*
@@ -15,23 +13,32 @@ up:
 
 # nixos
 
+cl:
+    sudo nix profile wipe-history --profile /nix/var/nix/profiles/system
+    sudo nix-collect-garbage --delete-old
+    nix-collect-garbage --delete-old
+
 bd host:
-    nixos-rebuild switch --flake .#{{host}}
+    sudo nixos-rebuild switch --flake .#{{host}}
 
 tt host:
-    nixos-rebuild test --flake .#{{host}}
+    sudo nixos-rebuild test --flake .#{{host}}
 
 bdg host:
     git add *
     git commit -m "update"
-    nixos-rebuild switch --flake .#{{host}}
+    sudo nixos-rebuild switch --flake .#{{host}}
 
 ttg host:
     git add *
     git commit -m "update"
-    nixos-rebuild test --flake .#{{host}}
+    sudo nixos-rebuild test --flake .#{{host}}
 
 # home manager
+
+hcl:
+    home-manager expire-generations
+    nix-collect-garbage --delete-old
 
 ihm host:
     nix run 'github:nix-community/home-manager' -- switch --flake '.#{{host}}'
