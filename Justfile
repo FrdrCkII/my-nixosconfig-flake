@@ -16,53 +16,53 @@ up:
 # nixos
 
 bd host:
-    sudo nixos-rebuild switch --impure --flake .#{{host}}
+    sudo nixos-rebuild switch --flake .#{{host}}
 
 tt host:
-    sudo nixos-rebuild test --impure --flake .#{{host}}
+    sudo nixos-rebuild test --flake .#{{host}}
 
 bdg host:
     git add *
     git commit -m "update"
-    sudo nixos-rebuild switch --impure --flake .#{{host}}
+    sudo nixos-rebuild switch --flake .#{{host}}
 
 ttg host:
     git add *
     git commit -m "update"
-    sudo nixos-rebuild test --impure --flake .#{{host}}
+    sudo nixos-rebuild test --flake .#{{host}}
 
 # home manager
 
 hbd host:
-    home-manager switch --impure --flake .#{{host}}
+    home-manager switch --flake .#{{host}}
 
 htt host:
-    home-manager test --impure --flake .#{{host}}
+    home-manager test --flake .#{{host}}
 
 hbdg host:
     git add *
     git commit -m "update"
-    home-manager switch --impure --flake .#{{host}}
+    home-manager switch --flake .#{{host}}
 
 httg host:
     git add *
     git commit -m "update"
-    home-manager test --impure --flake .#{{host}}
+    home-manager test --flake .#{{host}}
 
 # system manager
 
 sbd host:
-    system-manager switch --impure --flake .#{{host}}
+    sudo system-manager switch --flake .#{{host}}
 
 stt host:
-    system-manager test --impure --flake .#{{host}}
+    sudo system-manager test --flake .#{{host}}
 
 sbdg host:
     git add *
     git commit -m "update"
-    system-manager switch --impure --flake .#{{host}}
+    sudo system-manager switch --flake .#{{host}}
 
 sttg host:
     git add *
     git commit -m "update"
-    system-manager test --impure --flake .#{{host}}
+    sudo system-manager test --flake .#{{host}}
