@@ -17,15 +17,12 @@
 
     SystemPackages = with pkgs; [
       btrfs-assistant
-      snapper
-      p7zip-rar
       fastfetch
       nix-tree
     ];
     
     HomeManagerVersion = "25.05";
     HomePackages = with pkgs; [
-      fastfetch
       wechat-uos qq
       ffmpeg gimp
       libreoffice
