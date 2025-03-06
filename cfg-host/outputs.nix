@@ -26,9 +26,5 @@ in {
   };
   homeConfigurations = with cfg; {
     "${arch-home-pc.hostname}" = home-manager { cfg = arch-home-pc; };
-    "${arch-system-pc.hostname}" = home-manager { cfg = arch-system-pc; };
-  };
-  systemConfigs= with cfg; {
-    "${arch-system-pc.hostname}" = system-manager { cfg = arch-system-pc; };
   };
 }

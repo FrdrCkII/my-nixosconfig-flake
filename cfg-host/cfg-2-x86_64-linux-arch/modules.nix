@@ -2,10 +2,6 @@
 
 {
   modules = rec {
-    sysytem-modules = [
-      ./system
-      ../../mod-system-manager
-    ];
     home-modules = [
       ../../mod-home
       ../../mod-home/modules/aria2.nix
