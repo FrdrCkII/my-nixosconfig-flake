@@ -34,7 +34,7 @@ ttg host:
 # home manager
 
 ihm host:
-    sudo nix run '<home-manager>' -- switch --flake '.#{{host}}'
+    nix run 'github:nix-community/home-manager' -- switch --flake '.#{{host}}'
 
 hbd host:
     sudo home-manager switch --flake .#{{host}}
@@ -55,7 +55,7 @@ httg host:
 # system manager
 
 ism host:
-    sudo nix run 'github:numtide/system-manager' -- switch --flake '.#{{host}}'
+    nix run 'github:numtide/system-manager' -- switch --flake '.#{{host}}'
 
 sbd host:
     sudo system-manager switch --flake .#{{host}}
