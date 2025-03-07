@@ -6,9 +6,6 @@
   specialArgs = {
     inherit inputs cfg;
   };
-  nur-modules = with inputs.nur.legacyPackages."${system}"; [
-  ]
-  ++ cfg.mod.nur-modules;
 in 
 nixpkgs.lib.nixosSystem {
   inherit system specialArgs;

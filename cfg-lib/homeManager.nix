@@ -6,9 +6,6 @@
   extraSpecialArgs = {
     inherit inputs cfg;
   };
-  nur-modules = with inputs.nur.legacyPackages."${system}"; [
-  ]
-  ++ cfg.mod.nur-modules;
 in 
 home-manager.lib.homeManagerConfiguration {
   inherit extraSpecialArgs;
