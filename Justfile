@@ -62,20 +62,20 @@ httg host:
 # system manager
 
 ism host:
-    nix run 'github:numtide/system-manager' -- switch --flake '.#{{host}}'
+    sudo nix run 'github:numtide/system-manager' -- switch --flake '.#{{host}}'
 
 sbd host:
-    system-manager switch --flake .#{{host}}
+    sudo system-manager switch --flake .#{{host}}
 
 stt host:
-    system-manager test --flake .#{{host}}
+    sudo system-manager test --flake .#{{host}}
 
 sbdg host:
     git add *
     git commit -m "update"
-    system-manager switch --flake .#{{host}}
+    sudo system-manager switch --flake .#{{host}}
 
 sttg host:
     git add *
     git commit -m "update"
-    system-manager test --flake .#{{host}}
+    sudo system-manager test --flake .#{{host}}
