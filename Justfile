@@ -37,7 +37,8 @@ ttg host:
 # home manager
 
 hcl:
-    home-manager expire-generations
+    home-manager expire-generations '-1 days'
+    sudo nix-collect-garbage --delete-old
     nix-collect-garbage --delete-old
 
 ihm host:
