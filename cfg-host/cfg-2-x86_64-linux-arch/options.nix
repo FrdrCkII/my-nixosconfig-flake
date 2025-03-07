@@ -19,11 +19,11 @@
     HomePackages = with pkgs; [
       libreoffice gimp
       wechat-uos qq
+      fastfetch
+      nix-tree
     ];
 
     SystemPackages = with pkgs; [
-      fastfetch
-      nix-tree
     ];
   };
 }
