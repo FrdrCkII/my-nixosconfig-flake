@@ -19,7 +19,7 @@
     SystemVersion = "25.05";
     SystemChannel = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable";
     KernelPackages = pkgs.linuxPackages_zen;
-    SystemPackages = with pkgs; [
+    NixOSPackages = with pkgs; [
       btrfs-assistant
       snapper
       p7zip-rar
@@ -52,6 +52,10 @@
       winetricks
       prismlauncher
       wechat-uos qq
+    ];
+
+    SystemPackages = with pkgs; [
+
     ];
   };
 }

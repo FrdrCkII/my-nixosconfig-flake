@@ -28,6 +28,7 @@ in {
     "${arch-pc.hostname}" = home-manager { cfg = arch-pc; };
   };
   systemConfigs = with cfg; {
+    "${nixos-pc.hostname}" = system-manager { cfg = nixos-pc; };
     "${arch-pc.hostname}" = system-manager { cfg = arch-pc; };
   };
 }

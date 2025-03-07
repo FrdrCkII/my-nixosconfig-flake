@@ -7,6 +7,7 @@
       ../../mod-system-manager
     ];
     home-modules = [
+      ./home
       ../../mod-standalone-home
       ../../mod-standalone-home/modules/aria2.nix
       ../../mod-standalone-home/modules/kitty.nix

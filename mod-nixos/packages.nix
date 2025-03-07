@@ -2,7 +2,7 @@
   system-packages = with pkgs; [
     vim wget git
   ]
-  ++ cfg.opt.SystemPackages;
+  ++ cfg.opt.NixOSPackages;
 in {
   environment.systemPackages = system-packages;
 }

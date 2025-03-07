@@ -3,6 +3,7 @@
 {
   modules = rec {
     sysytem-modules = [
+      ./nixos
       ./system
       ./../mod-nixos
       ./../mod-nixos/config/boot.nix
@@ -18,6 +19,7 @@
       ./../mod-nixos/modules/steam.nix
     ];
     home-modules = [
+      ./home
       ../../mod-nixos-home
       ../../mod-nixos-home/modules/firefox.nix
       ../../mod-nixos-home/modules/just.nix

@@ -15,15 +15,15 @@
       
     ];
 
-    SystemPackages = with pkgs; [
-      fastfetch
-      nix-tree
-    ];
-
     HomeManagerVersion = "25.05";
     HomePackages = with pkgs; [
       libreoffice gimp
       wechat-uos qq
+    ];
+
+    SystemPackages = with pkgs; [
+      fastfetch
+      nix-tree
     ];
   };
 }
