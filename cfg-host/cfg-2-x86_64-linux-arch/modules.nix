@@ -1,20 +1,19 @@
-{ system, inputs }: let 
-  sysModDir = ../../mod-system-manager;
-  homeModDir = ../../mod-standalone-home;
-in {
+{ system, inputs }:
+
+{
   modules = rec {
     sysytem-modules = [
       ./system
-      ${sysModDir}
+      ../../mod-system-manager
     ];
     home-modules = [
-      ${homeModDir}
-      ${homeModDir}/modules/aria2.nix
-      ${homeModDir}/modules/kitty.nix
-      ${homeModDir}/modules/musicfox.nix
-      ${homeModDir}/modules/ssh.nix
-      ${homeModDir}/modules/yazi.nix
-      ${homeModDir}/modules/zsh.nix
+      ../../mod-standalone-home
+      ../../mod-standalone-home/modules/aria2.nix
+      ../../mod-standalone-home/modules/kitty.nix
+      ../../mod-standalone-home/modules/musicfox.nix
+      ../../mod-standalone-home/modules/ssh.nix
+      ../../mod-standalone-home/modules/yazi.nix
+      ../../mod-standalone-home/modules/zsh.nix
     ];
   };
 }
