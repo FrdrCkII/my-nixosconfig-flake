@@ -2,8 +2,8 @@
 
 {
   home.file = {
-    ".config/ghotty" = {
-      source = ../../cfg-dotf/${cfg.configname}/ghotty;
+    ".config/ghostty" = {
+      source = ../../cfg-dotf/${cfg.configname}/ghostty;
       recursive = true;
     };
   };
