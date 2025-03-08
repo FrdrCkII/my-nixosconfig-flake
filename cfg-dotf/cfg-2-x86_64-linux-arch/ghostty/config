@@ -47,6 +47,7 @@ background = 1a1b26
 foreground = c0caf5
 font-family = "CaskaydiaCove Nerd Font"
 font-family = "PingFang SC"
+font-size = 10
 custom-shader = shaders/glow.glsl
 cursor-style = block
 cursor-style-blink = false
