@@ -10,7 +10,6 @@
       ./home
       ../../mod-standalone-home
       ../../mod-standalone-home/modules/aria2.nix
-      ../../mod-standalone-home/modules/kitty.nix
       ../../mod-standalone-home/modules/musicfox.nix
       ../../mod-standalone-home/modules/ssh.nix
       ../../mod-standalone-home/modules/yazi.nix
