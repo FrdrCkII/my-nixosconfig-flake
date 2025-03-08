@@ -7,8 +7,8 @@
     };
   };
   programs.zsh.profileExtra = ''
-    if [ -z "$\{WAYLAND_DISPLAY\}" ] && [ "$\(tty\)" = "/dev/tty1" ]; then
-      ~/.local/bin/start-cage.sh
+    if [ "$(tty)" = "/dev/tty1" ]; then
+      ~/.local/bin/cagetty.sh
     fi
   '';
 }
