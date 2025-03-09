@@ -9,6 +9,7 @@
     home-modules = [
       ./home
       ../../mod-standalone-home
+      ./../mod-standalone-home/config/i18n.nix
       ../../mod-standalone-home/modules/aria2.nix
       ../../mod-standalone-home/modules/ghostty.nix
       ../../mod-standalone-home/modules/ghostty.tty1.nix
