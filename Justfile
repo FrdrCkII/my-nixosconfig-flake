@@ -61,7 +61,7 @@ httg host:
     home-manager test --flake .#{{host}}
 
 # system manager
-# 必须使用root用户运行
+# 必须使用root用户运行(不是root权限！)
 # sudo似乎会导致所有软件源(包括官方源)失效，导致所有软件包都必须从github拉取源码编译
 
 ism host:
