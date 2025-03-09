@@ -2,8 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    mesa
-    driversi686Linux.mesa
+    mesa driversi686Linux.mesa
     lact
   ];
   # systemd.user.services.lactd = {
