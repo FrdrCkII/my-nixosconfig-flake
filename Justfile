@@ -61,22 +61,24 @@ httg host:
     home-manager test --flake .#{{host}}
 
 # system manager
+# 必须使用root用户运行
+# sudo似乎会导致所有软件源(包括官方源)失效，导致所有软件包都必须从github拉取源码编译
 
 ism host:
-    sudo nix run 'github:numtide/system-manager' -- switch --flake '.#{{host}}'
+    nix run 'github:numtide/system-manager' -- switch --flake '.#{{host}}'
 
 sbd host:
-    sudo system-manager switch --flake .#{{host}}
+    system-manager switch --flake .#{{host}}
 
 stt host:
-    sudo system-manager test --flake .#{{host}}
+    system-manager test --flake .#{{host}}
 
 sbdg host:
     git add *
     git commit -m "update"
-    sudo system-manager switch --flake .#{{host}}
+    system-manager switch --flake .#{{host}}
 
 sttg host:
     git add *
     git commit -m "update"
-    sudo system-manager test --flake .#{{host}}
+    system-manager test --flake .#{{host}}
