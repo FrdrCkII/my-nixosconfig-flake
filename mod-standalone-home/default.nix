@@ -3,6 +3,12 @@
     ./options.nix
     ./packages.nix
   ]
+  ++ lib.optionals (builtins.elem "amd" cfg.opt.drivers) [
+    ./drivers/amd.nix
+  ]
+  ++ lib.optionals (builtins.elem "nvidia" cfg.opt.drivers) [
+    ./drivers/nvidia.nix
+  ]
   ++ lib.optionals (builtins.elem "hyprland" cfg.opt.desktop) [
     ./desktop/hyprland.nix
     ./modules/mako.nix

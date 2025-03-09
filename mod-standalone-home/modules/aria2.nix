@@ -11,11 +11,9 @@
     Unit = {
       Description = "Aria2 Daemon";
     };
-
     Service = {
       ExecStart = "/usr/bin/aria2c --conf-path=/home/${cfg.opt.username}/.aria2/aria2.conf";
     };
-
     Install = {
       WantedBy = [ "default.target" ];
     };
