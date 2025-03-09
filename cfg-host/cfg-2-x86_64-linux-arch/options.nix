@@ -24,6 +24,7 @@
     ];
 
     SystemPackages = with pkgs; [
+      mesa driversi686Linux.mesa
     ];
   };
 }
