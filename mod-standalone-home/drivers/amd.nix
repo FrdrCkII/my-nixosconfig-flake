@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    lact
-  ];
+  # home.packages = with pkgs; [
+  #   lact
+  # ];
   # systemd.user.services.lactd = {
   #   Unit = {
   #     Description = "AMDGPU Control Daemon";
