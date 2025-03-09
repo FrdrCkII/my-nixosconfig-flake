@@ -65,20 +65,30 @@ httg host:
 # sudo似乎会导致所有软件源(包括官方源)失效，导致所有软件包都必须从github拉取源码编译
 
 ism host:
+    sudo su
     nix run 'github:numtide/system-manager' -- switch --flake '.#{{host}}'
+    exit
 
 sbd host:
+    sudo su
     system-manager switch --flake .#{{host}}
+    exit
 
 stt host:
+    sudo su
     system-manager test --flake .#{{host}}
+    exit
 
 sbdg host:
     git add *
     git commit -m "update"
+    sudo su
     system-manager switch --flake .#{{host}}
+    exit
 
 sttg host:
     git add *
     git commit -m "update"
+    sudo su
     system-manager test --flake .#{{host}}
+    exit

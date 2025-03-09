@@ -9,6 +9,8 @@
 in 
 home-manager.lib.homeManagerConfiguration {
   inherit extraSpecialArgs;
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
   pkgs = cfg.pkg.unstable-pkgs;
   modules = 
     cfg.mod.home-modules;
