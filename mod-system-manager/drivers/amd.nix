@@ -13,6 +13,7 @@
           After = [ "multi-user.target" ];
         };
         serviceConfig = {
+          Environment = "";
           ExecStart = "lact daemon";
           Nice = "-10";
           Restart = "on-failure";
