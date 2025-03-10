@@ -8,6 +8,10 @@
     systemd.services = {
       lactd = {
         enable = true;
+        unitConfig = {
+          Description = "AMDGPU Control Daemon";
+          After = [ "multi-user.target" ];
+        };
         serviceConfig = {
           ExecStart = "lact daemon";
           Nice = "-10";
